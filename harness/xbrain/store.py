@@ -48,8 +48,10 @@ class Store:
         have = {r[1] for r in self.db.execute("PRAGMA table_info(tweets)")}
         for col, typ in [
             ("text", "TEXT"),
+            ("kind", "TEXT"),  # repost|post|reply — v2; NULL = legacy repost for compat
             ("original_id", "TEXT"), ("is_retweet", "INTEGER"),
-            ("views", "INTEGER"),
+            ("views", "INTEGER"), ("created_iso", "TEXT"),
+            ("is_self_repost", "INTEGER"), ("media_understanding", "TEXT"),
             ("lease_until", "INTEGER"),
             ("root_id", "TEXT"), ("in_reply_to", "TEXT"),
             ("conversation_id", "TEXT"), ("ancestors_json", "TEXT"),
@@ -60,6 +62,9 @@ class Store:
             ("deep_reason", "TEXT"), ("reference_value", "TEXT"),
             ("study_topics_json", "TEXT"), ("go_deeper", "TEXT"),
             ("summary", "TEXT"), ("reason", "TEXT"), ("confidence", "TEXT"),
+            ("unified_summary", "TEXT"), ("fused_topics_json", "TEXT"),
+            ("key_entities_json", "TEXT"), ("content_type", "TEXT"), ("fused", "INTEGER"),
+            ("thinking", "TEXT"), ("model_used", "TEXT"),
             ("route_tier", "TEXT"), ("route_json", "TEXT"),
         ]:
             if col not in have:
@@ -96,17 +101,18 @@ class Store:
                 iso = None
             if self.db.execute("SELECT 1 FROM tweets WHERE tweet_id=?", (it["tweet_id"],)).fetchone():
                 continue
+            kind = it.get("kind") or ("post" if it.get("is_retweet") == 0 and it.get("author_handle") else "repost")
             self.db.execute(
                 "INSERT INTO tweets(tweet_id, stage, first_seen, author_handle, author_name,"
                 " created_at, created_iso, repost_index, is_quote, quoted_id, media_json, text_len, text, flags,"
-                " original_id, is_retweet)"
-                " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                " original_id, is_retweet, kind)"
+                " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (it["tweet_id"], "discovered", time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                  it.get("author_handle"), it.get("author_name"), it.get("created_at"), iso,
                  base_idx + i, int(bool(it.get("is_quote"))), it.get("quoted_id"),
                  json.dumps(it.get("media", [])), it.get("text_len", 0),
                  it.get("text", ""), json.dumps(it.get("flags", {})),
-                 it.get("original_id"), int(bool(it.get("is_retweet")))))
+                 it.get("original_id"), int(bool(it.get("is_retweet"))), kind))
             with self.jsonl.open("a") as f:
                 f.write(json.dumps(it, ensure_ascii=False) + "\n")
                 f.flush()

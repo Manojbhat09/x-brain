@@ -17,14 +17,16 @@ description: Turn any X account's reposts into a structured knowledge base + Obs
 ```bash
 cp .env.example .env   # fill X_USER_ID, X_AUTH_TOKEN, X_CT0
 pip install -r harness/requirements.txt
-python3 harness/xb.py --brain-dir ./data doctor          # verify creds
-python3 harness/xb.py --brain-dir ./data enum --resume   # L1
-python3 harness/xb.py --brain-dir ./data enrich          # L2
-python3 harness/xb.py --brain-dir ./data links-run       # L3
-python3 harness/xb.py --brain-dir ./data vision-run      # L4 (optional)
+python3 harness/xb.py --brain-dir ./data doctor                     # verify creds (reposts)
+python3 harness/xb.py --brain-dir ./data doctor --posts-only       # verify posts timeline
+python3 harness/xb.py --brain-dir ./data enum --resume              # L1 reposts
+python3 harness/xb.py --brain-dir ./data enum --posts-only --resume # L1 posts (originals only, separate cursor)
+python3 harness/xb.py --brain-dir ./data enrich                     # L2
+python3 harness/xb.py --brain-dir ./data links-run                  # L3
+python3 harness/xb.py --brain-dir ./data vision-run                 # L4 (optional)
 python3 harness/xb.py --brain-dir ./data llm-run --route --mode int-ext-int --backends ollama,inferx,or-nemotron  # L5
-python3 harness/xb.py --brain-dir ./data deep-run        # curation
-python3 harness/xb.py --brain-dir ./data fuse-run        # synthesis (last)
+python3 harness/xb.py --brain-dir ./data deep-run                   # curation
+python3 harness/xb.py --brain-dir ./data fuse-run                   # synthesis (last)
 python3 harness/xb.py --brain-dir ./data graph-export --out ./data/vault
 ```
 
@@ -58,7 +60,7 @@ Deleted posts are tombstones (`examples/tombstones.jsonl.example`): first/last s
 ## Pipeline
 
 ```
-creds (.env / --user-id) → L1 enumerator (UserRepostsTimeline, double-empty EOF, checkpointed)
+creds (.env / --user-id) → L1 enumerator (UserRepostsTimeline | UserTweets --posts-only, double-empty EOF, per-kind cursors, checkpointed)
   → L2 enricher (TweetResultByRestId + FxLane fallback)
   → L3 links (t.co → final URL/domain/title/text)
   → L4 vision (downscale → base64, warm-ping, stream, retry)

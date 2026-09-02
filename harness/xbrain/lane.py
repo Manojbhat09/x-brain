@@ -36,15 +36,16 @@ class GraphQLLane:
         self.limiter = RateLimiter(limits_path)
         self.cache_dir = cache_dir
 
-    def fetch_page(self, user_id: str, cursor: str | None, count: int = 20) -> tuple[list[dict], str | None]:
-        """One UserRepostsTimeline page → (items, bottom_cursor)."""
-        url = protocol.build_url(user_id, cursor, count)
+    def fetch_page(self, user_id: str, cursor: str | None, count: int = 20, kind: str = "reposts") -> tuple[list[dict], str | None]:
+        """One timeline page → (items, bottom_cursor). kind: reposts|posts."""
+        url = protocol.build_url(user_id, cursor, count, kind=kind)
+        op = protocol.OP_POSTS if kind == "posts" else protocol.OP_REPOSTS
         pairs = protocol._load_tid_pairs(self.cache_dir / "tid_pairs.json", self.http)
         headers = protocol.build_headers(self.creds, url, pairs)
 
-        self.limiter.wait(protocol.OP_REPOSTS)
+        self.limiter.wait(op)
         resp = self.http.post(url, headers=headers, timeout=30)
-        self.limiter.observe(protocol.OP_REPOSTS, resp.headers)
+        self.limiter.observe(op, resp.headers)
 
         if resp.status_code == 429:
             reset = int(resp.headers.get("x-rate-limit-reset", time.time() + 900))
@@ -60,8 +61,9 @@ class GraphQLLane:
         items, bottom = parse_timeline(resp.json())
         return items, bottom
 
-    def status(self) -> str:
-        return self.limiter.status(protocol.OP_REPOSTS)
+    def status(self, kind: str = "reposts") -> str:
+        op = protocol.OP_POSTS if kind == "posts" else protocol.OP_REPOSTS
+        return self.limiter.status(op)
 
     # --- L2: per-ID detail (thread context) -----------------------------------
     def fetch_tweet_detail(self, tweet_id: str) -> dict:
