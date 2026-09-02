@@ -1,0 +1,1055 @@
+{
+  "meta": {
+    "gpu": {
+      "name": "NVIDIA GeForce GTX 1660 Ti",
+      "vram_total_gb": 6,
+      "vram_overhead_xwayland_gb": 0.66,
+      "vram_usable_gb": 5.2
+    },
+    "eval": "quality eval on gold tweets, temp=0, N=12 or N=8; determinism ~1.0 everywhere",
+    "quality_N": "12 for original 6 + polari/nuextract/ornith/qwen-thinking; 8 for GPU-fit pipeline candidates",
+    "notes": "F1/obj/rel lower bounds vs noisy gold; eyeball review showed candidates often righter than gold Sanitized for distribution.",
+    "storage": {
+      "ollama_store": "OLLAMA_MODELS (default ~/.ollama or /var/lib/ollama-models)",
+      "note": "GGUF archive and scratch paths are user-configurable; not required for harness operation"
+    }
+  },
+  "ranking_order": [
+    "nemotron3-nano",
+    "granite-4.2-3b-q8",
+    "polaris-v1",
+    "granite-4.1-3b-q8",
+    "qwen3.5-4b-super-coder-q4",
+    "qwen3-4b-thinking-2507-q8",
+    "ornith-1.5-9b-q4km",
+    "qwen38-distill",
+    "deepseek-r1:7b",
+    "qwen3:4b",
+    "deepseek-r1:1.5b",
+    "small-8b-liquid-q4km",
+    "small-lfm26-q5km",
+    "small-8b-gaston-q4km",
+    "small-8b-unsloth-q4km",
+    "small-qwen35-q4"
+  ],
+  "cards": {
+    "tag_topic": [
+      "nemotron3-nano",
+      "granite-4.1-3b-q8",
+      "polaris-v1",
+      "qwen3.5-4b-super-coder-q4"
+    ],
+    "extract_entities": [
+      "nemotron3-nano",
+      "polaris-v1",
+      "deepseek-r1:7b"
+    ],
+    "self_relevance": [
+      "granite-4.2-3b-q8",
+      "qwen3-4b-thinking-2507-q8"
+    ],
+    "deep_review": [
+      "qwen3-4b-thinking-2507-q8"
+    ],
+    "ensemble": [
+      "nemotron3-nano",
+      "polaris-v1",
+      "qwen3.5-4b-super-coder-q4"
+    ]
+  },
+  "recommended_models": [
+    {
+      "model": "nemotron3-nano",
+      "name": "NVIDIA Nemotron3-Nano-4B",
+      "quant": "Q4_K_M",
+      "size_gb": 2.8,
+      "vram_gb": 3.3,
+      "gpu_fit": "full",
+      "role": "primary_fast_bulk",
+      "recommendation_rank": 1,
+      "status": "KEEP",
+      "purpose": "default tag_topic + extract_entities on bulk drain",
+      "better_than": "highest topic and extraction F1 of all evaluated; near-best objectivity (.866) at 6.1s; 9x better value/s than qwen3:4b",
+      "good_at": [
+        "topic classification",
+        "entity extraction",
+        "fast bulk processing",
+        "grounded output"
+      ],
+      "cards": [
+        "tag_topic",
+        "extract_entities"
+      ],
+      "quality": {
+        "N": 12,
+        "topic": "11/12",
+        "topic_frac": 0.92,
+        "F1": 0.534,
+        "obj": 0.866,
+        "rel": "6/12",
+        "rel_frac": 0.5,
+        "avg_s": 6.1,
+        "determinism": 1.0,
+        "think_chars": 22884
+      },
+      "bench": {
+        "valid": "20/20",
+        "avg_s": 14.1,
+        "think": 8304
+      },
+      "perf": {
+        "est_tokps": 967,
+        "est_char_s": 3870,
+        "load_footprint_gb": 2.8
+      },
+      "context": "128K-capable arch; smallest-footprint keeper",
+      "routing": {
+        "speed_tier": "standard",
+        "json_reliability": "high",
+        "grounding": 0.866,
+        "best_cards": [
+          "tag_topic",
+          "extract_entities",
+          "summarize"
+        ],
+        "vram_fit": "full",
+        "nsfw_tolerate": "unknown-pending-probe"
+      }
+    },
+    {
+      "model": "granite-4.2-3b-q8",
+      "name": "IBM Granite-4.2-3B",
+      "quant": "Q8_0",
+      "size_gb": 3.9,
+      "vram_gb": 4.4,
+      "gpu_fit": "full",
+      "role": "self_relevance_objectivity",
+      "recommendation_rank": 2,
+      "status": "KEEP",
+      "purpose": "self_relevance card; grounding validator",
+      "better_than": "only model with OBJECTIVITY=1.0 (zero fabricated entities); tied-highest self_relevance (8/12)",
+      "good_at": [
+        "self_relevance",
+        "fabrication-free extraction",
+        "grounding validation",
+        "trust-heavy financial claims"
+      ],
+      "cards": [
+        "self_relevance"
+      ],
+      "quality": {
+        "N": 12,
+        "topic": "9/12",
+        "topic_frac": 0.75,
+        "F1": 0.442,
+        "obj": 1.0,
+        "rel": "8/12",
+        "rel_frac": 0.67,
+        "avg_s": 27.8,
+        "determinism": 1.0,
+        "think_chars": 148812
+      },
+      "bench": {
+        "valid": "9/9",
+        "avg_s": 30.8,
+        "think": 39214
+      },
+      "perf": {
+        "est_tokps": 1345,
+        "est_char_s": 5379,
+        "load_footprint_gb": 3.9
+      },
+      "note": "slower than nemotron (~4.5x); use where grounding > speed",
+      "routing": {
+        "speed_tier": "standard",
+        "json_reliability": "high",
+        "grounding": 1.0,
+        "best_cards": [
+          "self_relevance",
+          "extract_entities"
+        ],
+        "vram_fit": "full",
+        "nsfw_tolerate": "unknown-pending-probe"
+      }
+    },
+    {
+      "model": "polaris-v1",
+      "name": "Polaris-V1",
+      "quant": "Q8_0",
+      "size_gb": 3.5,
+      "vram_gb": 4.0,
+      "gpu_fit": "full",
+      "role": "high_obj_generalist_fast",
+      "recommendation_rank": 3,
+      "status": "KEEP",
+      "purpose": "ensemble vote / second opinion on topic+extract; grounded fast option",
+      "better_than": "near-perfect obj (.983) at nemotron-grade speed (5.5s); good relevance (8/12)",
+      "good_at": [
+        "grounded extraction",
+        "ensemble voting",
+        "fast general classification"
+      ],
+      "cards": [
+        "tag_topic",
+        "extract_entities"
+      ],
+      "quality": {
+        "N": 12,
+        "topic": "10/12",
+        "topic_frac": 0.83,
+        "F1": 0.375,
+        "obj": 0.983,
+        "rel": "8/12",
+        "rel_frac": 0.67,
+        "avg_s": 5.5,
+        "determinism": 1.0,
+        "think_chars": 22795
+      },
+      "bench": {
+        "valid": "10/10",
+        "avg_s": 69.2,
+        "think": 4114
+      },
+      "perf": {
+        "est_tokps": 1069,
+        "est_char_s": 4275,
+        "load_footprint_gb": 3.5
+      },
+      "routing": {
+        "speed_tier": "standard",
+        "json_reliability": "high",
+        "grounding": 0.983,
+        "best_cards": [
+          "extract_entities",
+          "self_relevance",
+          "summarize"
+        ],
+        "vram_fit": "full",
+        "nsfw_tolerate": "unknown-pending-probe"
+      }
+    },
+    {
+      "model": "granite-4.1-3b-q8",
+      "name": "IBM Granite-4.1-3B",
+      "quant": "Q8_0",
+      "size_gb": 3.6,
+      "vram_gb": 4.1,
+      "gpu_fit": "full",
+      "role": "ultra_fast_topic",
+      "recommendation_rank": 4,
+      "status": "KEEP",
+      "purpose": "high-volume low-depth classification; keepalive/front-door",
+      "better_than": "fastest model on machine (0.6s/task); best value-per-second",
+      "good_at": [
+        "fast topic labeling",
+        "cheap classification",
+        "reject/detect front-door"
+      ],
+      "cards": [
+        "tag_topic"
+      ],
+      "quality": {
+        "N": 8,
+        "topic": "7/8",
+        "topic_frac": 0.88,
+        "F1": 0.083,
+        "obj": 0.25,
+        "rel": "3/8",
+        "rel_frac": 0.38,
+        "avg_s": 0.6,
+        "determinism": 1.0,
+        "think_chars": 0
+      },
+      "bench": {
+        "valid": "7/10",
+        "avg_s": 1.3,
+        "think": 0
+      },
+      "perf": {
+        "est_tokps": 300,
+        "est_char_s": 1200,
+        "load_footprint_gb": 3.6
+      },
+      "note": "weak entity grounding \u2014 do NOT use for extract",
+      "routing": {
+        "speed_tier": "fast",
+        "json_reliability": "medium",
+        "grounding": 0.25,
+        "best_cards": [
+          "tag_topic"
+        ],
+        "vram_fit": "full",
+        "nsfw_tolerate": "unknown-pending-probe",
+        "note": "weak grounding - topic-only"
+      }
+    },
+    {
+      "model": "qwen3.5-4b-super-coder-q4",
+      "name": "Qwen3.5-4B-Super-Coder",
+      "quant": "Q4_K_M",
+      "size_gb": 2.6,
+      "vram_gb": 3.1,
+      "gpu_fit": "full",
+      "role": "fast_reliable_no_reasoning",
+      "recommendation_rank": 5,
+      "status": "KEEP",
+      "purpose": "reliable fast non-reasoning worker; 9/9 JSON validity",
+      "better_than": "only GPU-fit candidate that passed; best schema reliability (9/9 valid), strong topic (7/8), no fragile thinking",
+      "good_at": [
+        "clean structured JSON output",
+        "fast extraction",
+        "when nemotron is busy"
+      ],
+      "cards": [
+        "tag_topic",
+        "extract_entities"
+      ],
+      "quality": {
+        "N": 8,
+        "topic": "7/8",
+        "topic_frac": 0.88,
+        "F1": 0.289,
+        "obj": 0.753,
+        "rel": "5/8",
+        "rel_frac": 0.62,
+        "avg_s": 5.7,
+        "determinism": 1.0,
+        "think_chars": 22690
+      },
+      "bench": {
+        "valid": "9/9",
+        "avg_s": 5.0,
+        "think": 7440
+      },
+      "perf": {
+        "est_tokps": 1030,
+        "est_char_s": 4107,
+        "load_footprint_gb": 2.6
+      },
+      "routing": {
+        "speed_tier": "fast",
+        "json_reliability": "highest",
+        "grounding": 0.753,
+        "best_cards": [
+          "extract_entities",
+          "summarize",
+          "tag_topic"
+        ],
+        "vram_fit": "full",
+        "nsfw_tolerate": "unknown-pending-probe"
+      }
+    },
+    {
+      "model": "qwen3-4b-thinking-2507-q8",
+      "name": "Qwen3-4B-Thinking-2507",
+      "quant": "Q8_0",
+      "size_gb": 4.3,
+      "vram_gb": 4.8,
+      "gpu_fit": "full",
+      "role": "deep_review_tier",
+      "recommendation_rank": 6,
+      "status": "KEEP",
+      "purpose": "deep-review tier for low-confidence/edge tweets",
+      "better_than": "best self_relevance (10/12) + perfect obj (1.0); deep reasoning",
+      "good_at": [
+        "deep reasoning",
+        "edge-case review",
+        "max grounding + relevance"
+      ],
+      "cards": [
+        "self_relevance",
+        "tag_topic"
+      ],
+      "quality": {
+        "N": 12,
+        "topic": "10/12",
+        "topic_frac": 0.83,
+        "F1": 0.143,
+        "obj": 1.0,
+        "rel": "10/12",
+        "rel_frac": 0.83,
+        "avg_s": 88.9,
+        "determinism": 1.0,
+        "think_chars": 159479
+      },
+      "bench": {
+        "valid": "10/10",
+        "avg_s": 92.8,
+        "think": 48637
+      },
+      "perf": {
+        "est_tokps": 450,
+        "est_char_s": 1802,
+        "load_footprint_gb": 4.3
+      },
+      "note": "slow (88.9s) \u2014 quality over throughput",
+      "routing": {
+        "speed_tier": "deep",
+        "json_reliability": "high",
+        "grounding": 1.0,
+        "best_cards": [
+          "extract_entities",
+          "self_relevance",
+          "summarize"
+        ],
+        "vram_fit": "full",
+        "nsfw_tolerate": "unknown-pending-probe",
+        "note": "slow 88.9s"
+      }
+    },
+    {
+      "model": "ornith-1.5-9b-q4km",
+      "name": "Ornith-1.5-9B",
+      "quant": "Q4_K_M",
+      "size_gb": 5.8,
+      "vram_gb": 6.4,
+      "gpu_fit": "no",
+      "role": "topic_accuracy_flagship",
+      "recommendation_rank": 7,
+      "status": "KEEP",
+      "purpose": "topic classification where category accuracy is priority",
+      "better_than": "perfect gold-topic agreement (12/12); highest relevance (9/12)",
+      "good_at": [
+        "topic categorization"
+      ],
+      "caution": "OBJECTIVITY 0.606 - fabricates ~40% of entities; needs entity post-validation",
+      "cards": [
+        "tag_topic"
+      ],
+      "quality": {
+        "N": 12,
+        "topic": "12/12",
+        "topic_frac": 1.0,
+        "F1": 0.355,
+        "obj": 0.606,
+        "rel": "9/12",
+        "rel_frac": 0.75,
+        "avg_s": 43.1,
+        "determinism": 1.0,
+        "think_chars": 53515
+      },
+      "bench": {
+        "valid": "10/10",
+        "avg_s": 26.5,
+        "think": 8716
+      },
+      "perf": {
+        "est_tokps": 315,
+        "est_char_s": 1258,
+        "load_footprint_gb": 6.4
+      },
+      "note": "does NOT fit 6G VRAM -> partial CPU offload, slow",
+      "routing": {
+        "speed_tier": "deep",
+        "json_reliability": "high",
+        "grounding": 0.606,
+        "best_cards": [
+          "tag_topic"
+        ],
+        "vram_fit": "partial-cpu-offload",
+        "nsfw_tolerate": "unknown-pending-probe",
+        "note": "topic 12/12 but fabricates entities"
+      }
+    },
+    {
+      "model": "qwen38-distill",
+      "name": "Qwen3.8-4B-Distill",
+      "quant": "Q6_K",
+      "size_gb": 3.6,
+      "vram_gb": 4.1,
+      "gpu_fit": "full",
+      "role": "balanced_reasoning",
+      "recommendation_rank": 8,
+      "status": "KEEP",
+      "purpose": "balanced mid-speed reasoning generalist",
+      "better_than": "reasoning without 50-90s cost; well-grounded (.815)",
+      "good_at": [
+        "general reasoning",
+        "classification with reasoning"
+      ],
+      "cards": [
+        "tag_topic"
+      ],
+      "quality": {
+        "N": 12,
+        "topic": "10/12",
+        "topic_frac": 0.83,
+        "F1": 0.219,
+        "obj": 0.815,
+        "rel": "7/12",
+        "rel_frac": 0.58,
+        "avg_s": 18.0,
+        "determinism": 1.0,
+        "think_chars": 64894
+      },
+      "bench": {
+        "valid": "23/23",
+        "avg_s": 22.6,
+        "think": 13390
+      },
+      "perf": {
+        "est_tokps": 911,
+        "est_char_s": 3645,
+        "load_footprint_gb": 3.6
+      },
+      "routing": {
+        "speed_tier": "standard",
+        "json_reliability": "high",
+        "grounding": 0.815,
+        "best_cards": [
+          "tag_topic",
+          "summarize"
+        ],
+        "vram_fit": "full",
+        "nsfw_tolerate": "unknown-pending-probe"
+      }
+    },
+    {
+      "model": "deepseek-r1:7b",
+      "name": "DeepSeek-R1-7B",
+      "quant": "Q4_K_M",
+      "size_gb": 4.7,
+      "vram_gb": 5.2,
+      "gpu_fit": "partial",
+      "role": "obj_fallback",
+      "recommendation_rank": 9,
+      "status": "KEEP",
+      "purpose": "fallback extract where grounding priority",
+      "better_than": "near-perfect grounding (.958)",
+      "good_at": [
+        "grounded extraction"
+      ],
+      "caution": "self_relevance only 1/12 - do not use for relevance",
+      "cards": [
+        "extract_entities"
+      ],
+      "quality": {
+        "N": 12,
+        "topic": "9/12",
+        "topic_frac": 0.75,
+        "F1": 0.333,
+        "obj": 0.958,
+        "rel": "1/12",
+        "rel_frac": 0.08,
+        "avg_s": 23.2,
+        "determinism": 1.0,
+        "think_chars": 58583
+      },
+      "bench": {
+        "valid": "9/9",
+        "avg_s": 25.9,
+        "think": 15796
+      },
+      "perf": {
+        "est_tokps": 639,
+        "est_char_s": 2556,
+        "load_footprint_gb": 4.7
+      },
+      "note": "7B straddles 6G VRAM -> partial offload",
+      "routing": {
+        "speed_tier": "deep",
+        "json_reliability": "high",
+        "grounding": 0.958,
+        "best_cards": [
+          "extract_entities"
+        ],
+        "vram_fit": "partial",
+        "nsfw_tolerate": "unknown-pending-probe",
+        "note": "rel 1/12 - never use for self_relevance"
+      }
+    },
+    {
+      "model": "qwen3:4b",
+      "name": "Qwen3-4B",
+      "quant": "Q4_K_M (official)",
+      "size_gb": 2.5,
+      "vram_gb": 3.0,
+      "gpu_fit": "full",
+      "role": "legacy_baseline",
+      "recommendation_rank": 10,
+      "status": "KEEP",
+      "purpose": "legacy repro / ablations",
+      "better_than": "kept for continuity only",
+      "good_at": [
+        "regression testing"
+      ],
+      "caution": "obj .667 weakest grounding of keepers; superseded by nemotron",
+      "cards": [
+        "tag_topic"
+      ],
+      "quality": {
+        "N": 12,
+        "topic": "10/12",
+        "topic_frac": 0.83,
+        "F1": 0.215,
+        "obj": 0.667,
+        "rel": "8/12",
+        "rel_frac": 0.67,
+        "avg_s": 53.8,
+        "determinism": 1.0,
+        "think_chars": 304475
+      },
+      "bench": {
+        "valid": "9/9",
+        "avg_s": 39.5,
+        "think": 49216
+      },
+      "perf": {
+        "est_tokps": 1418,
+        "est_char_s": 5673,
+        "load_footprint_gb": 2.5
+      },
+      "routing": {
+        "speed_tier": "standard",
+        "json_reliability": "high",
+        "grounding": 0.667,
+        "best_cards": [
+          "tag_topic"
+        ],
+        "vram_fit": "full",
+        "nsfw_tolerate": "unknown-pending-probe",
+        "note": "legacy baseline"
+      }
+    },
+    {
+      "model": "deepseek-r1:1.5b",
+      "name": "DeepSeek-R1-1.5B",
+      "quant": "Q4_K_M",
+      "size_gb": 1.1,
+      "vram_gb": 1.5,
+      "gpu_fit": "full",
+      "role": "tiny_reserve",
+      "recommendation_rank": 11,
+      "status": "KEEP",
+      "purpose": "ultra-light fast tasks; warm-start / low-power",
+      "better_than": "fastest raw tok/s; decent F1 for size",
+      "good_at": [
+        "cheap classification",
+        "edge/low-power"
+      ],
+      "caution": "weak category + relevance",
+      "cards": [
+        "tag_topic"
+      ],
+      "quality": {
+        "N": 12,
+        "topic": "6/12",
+        "topic_frac": 0.5,
+        "F1": 0.439,
+        "obj": 0.818,
+        "rel": "3/12",
+        "rel_frac": 0.25,
+        "avg_s": 4.5,
+        "determinism": 1.0,
+        "think_chars": 53379
+      },
+      "bench": {
+        "valid": "8/9",
+        "avg_s": 6.0,
+        "think": 15027
+      },
+      "perf": {
+        "est_tokps": 3005,
+        "est_char_s": 12022,
+        "load_footprint_gb": 1.1
+      },
+      "routing": {
+        "speed_tier": "fast",
+        "json_reliability": "medium",
+        "grounding": 0.818,
+        "best_cards": [
+          "tag_topic"
+        ],
+        "vram_fit": "full",
+        "nsfw_tolerate": "unknown-pending-probe",
+        "note": "weak topic agreement"
+      }
+    },
+    {
+      "model": "small-8b-liquid-q4km",
+      "name": "LFM2.5-8B-A1B Liquid Q4_K_M",
+      "quant": "Q4_K_M",
+      "size_gb": 4.8,
+      "vram_gb": 5.3,
+      "gpu_fit": "partial",
+      "role": "small_best_F1",
+      "recommendation_rank": 12,
+      "status": "KEEP",
+      "purpose": "best small F1 (.609) with high obj .938; 8B MoE Q4_K_M",
+      "better_than": "highest small F1; near-best small obj; Q4_K_M fits 5.2G usable (partial)",
+      "good_at": [
+        "entity extraction",
+        "grounded output",
+        "small-model best F1"
+      ],
+      "cards": [
+        "extract_entities",
+        "tag_topic"
+      ],
+      "quality": {
+        "N": 8,
+        "topic": "6/8",
+        "topic_frac": 0.75,
+        "F1": 0.609,
+        "obj": 0.938,
+        "rel": "5/8",
+        "rel_frac": 0.62,
+        "avg_s": 12.0,
+        "determinism": 1.0,
+        "think_chars": 50365
+      },
+      "bench": {
+        "valid": "9/9",
+        "avg_s": 7.9,
+        "think": 12879
+      },
+      "perf": {
+        "est_tokps": 620,
+        "est_char_s": 2480,
+        "load_footprint_gb": 4.8
+      },
+      "hf_repo": "LiquidAI/LFM2.5-8B-A1B-GGUF",
+      "hf_file": "LFM2.5-8B-A1B-Q4_K_M.gguf"
+    },
+    {
+      "model": "small-lfm26-q5km",
+      "name": "LFM2.5-2.6B Code Q5_K_M",
+      "quant": "Q5_K_M",
+      "size_gb": 1.94,
+      "vram_gb": 2.4,
+      "gpu_fit": "full",
+      "role": "small_efficient_rel",
+      "recommendation_rank": 13,
+      "status": "KEEP",
+      "purpose": "small 2.6B Q5_K_M with strong rel 7/8 and obj .958; efficient",
+      "better_than": "strong objectivity and relevance for 1.94G; fits fully in VRAM",
+      "good_at": [
+        "self_relevance",
+        "grounded extraction"
+      ],
+      "cards": [
+        "self_relevance",
+        "tag_topic"
+      ],
+      "quality": {
+        "N": 8,
+        "topic": "7/8",
+        "topic_frac": 0.88,
+        "F1": 0.502,
+        "obj": 0.958,
+        "rel": "7/8",
+        "rel_frac": 0.88,
+        "avg_s": 18.8,
+        "determinism": 1.0,
+        "think_chars": 121465
+      },
+      "bench": {
+        "valid": "0/9",
+        "avg_s": 18.8,
+        "think": 121465
+      },
+      "perf": {
+        "est_tokps": 350,
+        "est_char_s": 1400,
+        "load_footprint_gb": 1.94
+      },
+      "hf_repo": "bunnycore/LMF-2.5-2B-Code-GGUF",
+      "hf_file": "LFM2.5-2.6B.Q5_K_M.gguf"
+    },
+    {
+      "model": "small-8b-gaston-q4km",
+      "name": "LFM2.5-8B-A1B Gaston Uncensored Q4_K_M",
+      "quant": "Q4_K_M",
+      "size_gb": 4.8,
+      "vram_gb": 5.3,
+      "gpu_fit": "partial",
+      "role": "small_perfect_topic",
+      "recommendation_rank": 14,
+      "status": "KEEP",
+      "purpose": "perfect topic 8/8 with best small obj .975; uncensored Gaston",
+      "better_than": "only small with perfect topic agreement; near-perfect obj",
+      "good_at": [
+        "topic classification",
+        "grounded extraction"
+      ],
+      "cards": [
+        "tag_topic"
+      ],
+      "quality": {
+        "N": 8,
+        "topic": "8/8",
+        "topic_frac": 1.0,
+        "F1": 0.479,
+        "obj": 0.975,
+        "rel": "4/8",
+        "rel_frac": 0.5,
+        "avg_s": 14.4,
+        "determinism": 1.0,
+        "think_chars": 58359
+      },
+      "bench": {
+        "valid": "9/9",
+        "avg_s": 8.0,
+        "think": 13384
+      },
+      "perf": {
+        "est_tokps": 580,
+        "est_char_s": 2320,
+        "load_footprint_gb": 4.8
+      },
+      "hf_repo": "gaston-parravicini/LFM2.5-8B-A1B-Uncensored-Gaston-GGUF",
+      "hf_file": "LFM2.5-8B-A1B-Uncensored-Gaston-Q4_K_M.gguf"
+    },
+    {
+      "model": "small-8b-unsloth-q4km",
+      "name": "LFM2.5-8B-A1B Unsloth Q4_K_M",
+      "quant": "Q4_K_M",
+      "size_gb": 4.96,
+      "vram_gb": 5.5,
+      "gpu_fit": "partial",
+      "role": "small_perfect_obj",
+      "recommendation_rank": 15,
+      "status": "KEEP",
+      "purpose": "perfect obj 1.0 with decent F1 .441; Unsloth UD Q4_K_M",
+      "better_than": "only small with perfect objectivity (no fabrication)",
+      "good_at": [
+        "fabrication-free extraction",
+        "grounding"
+      ],
+      "cards": [
+        "extract_entities"
+      ],
+      "quality": {
+        "N": 8,
+        "topic": "6/8",
+        "topic_frac": 0.75,
+        "F1": 0.441,
+        "obj": 1.0,
+        "rel": "5/8",
+        "rel_frac": 0.62,
+        "avg_s": 10.4,
+        "determinism": 1.0,
+        "think_chars": 41502
+      },
+      "bench": {
+        "valid": "9/9",
+        "avg_s": 7.5,
+        "think": 11755
+      },
+      "perf": {
+        "est_tokps": 650,
+        "est_char_s": 2600,
+        "load_footprint_gb": 4.96
+      },
+      "hf_repo": "unsloth/LFM2.5-8B-A1B-GGUF",
+      "hf_file": "LFM2.5-8B-A1B-UD-Q4_K_M.gguf"
+    },
+    {
+      "model": "small-qwen35-q4",
+      "name": "Qwen3.5-4B-Super-Coder Q4_0 (small tag)",
+      "quant": "Q4_0",
+      "size_gb": 2.43,
+      "vram_gb": 2.9,
+      "gpu_fit": "full",
+      "role": "small_fast_coder",
+      "recommendation_rank": 16,
+      "status": "KEEP",
+      "purpose": "completes #12 jica98/qwen3.5-4B-super-coder; fast coder, 7/8 topic",
+      "better_than": "same as rank 5 qwen3.5-4b-super-coder-q4; re-benched as small-qwen35-q4 for small table completeness",
+      "good_at": [
+        "clean JSON",
+        "fast topic"
+      ],
+      "cards": [
+        "tag_topic"
+      ],
+      "quality": {
+        "N": 8,
+        "topic": "7/8",
+        "topic_frac": 0.88,
+        "F1": 0.289,
+        "obj": 0.753,
+        "rel": "5/8",
+        "rel_frac": 0.62,
+        "avg_s": 6.0,
+        "determinism": 1.0,
+        "think_chars": 22690
+      },
+      "bench": {
+        "valid": "9/9",
+        "avg_s": 5.0,
+        "think": 7440
+      },
+      "perf": {
+        "est_tokps": 1030,
+        "est_char_s": 4107,
+        "load_footprint_gb": 2.43
+      },
+      "hf_repo": "jica98/qwen3.5-4B-super-coder",
+      "hf_file": "qwen3.5-4B-super-coder.Q4_0.gguf",
+      "note": "duplicate of rank 5 qwen3.5-4b-super-coder-q4; kept to satisfy small 5/5 completeness per user request"
+    }
+  ],
+  "deleted_models": [
+    {
+      "model": "qwen35-4b-q4km",
+      "reason": "no valid JSON (obj 0.0)",
+      "topic": "5/8",
+      "obj": 0.0,
+      "avg_s": 73.0
+    },
+    {
+      "model": "ai21-jamba-reasoning-3b-q4km",
+      "reason": "no valid JSON (obj 0.0)",
+      "topic": "0/8",
+      "obj": 0.0,
+      "avg_s": 22.5
+    },
+    {
+      "model": "agents-a1-4b-q4km",
+      "reason": "huge think + broken schema (valid 2/9, obj 0)",
+      "topic": "6/8",
+      "obj": 0.0,
+      "avg_s": 63.8
+    },
+    {
+      "model": "vibethinker-3b",
+      "reason": "no reasoning tokens, broken output (0/9)",
+      "topic": "0/9",
+      "obj": 0.0,
+      "avg_s": 0
+    },
+    {
+      "model": "vibethinker3b-i1-q6k",
+      "reason": "no valid JSON (obj 0.0)",
+      "topic": "0/8",
+      "obj": 0.0,
+      "avg_s": 27.7
+    },
+    {
+      "model": "claude-sonnet5-llama3.2-3b-q4km",
+      "reason": "fails schema (F1 0)",
+      "topic": "3/8",
+      "obj": 0.5,
+      "avg_s": 0.5
+    },
+    {
+      "model": "llama3.2-abliterated-q8",
+      "reason": "weak/unreliable output",
+      "topic": "4/8",
+      "obj": 0.375,
+      "avg_s": 0.9
+    },
+    {
+      "model": "h2o-danube3.1-4b-q4km",
+      "reason": "weak (obj .333)",
+      "topic": "4/8",
+      "obj": 0.333,
+      "avg_s": 1.7
+    },
+    {
+      "model": "nanbeige4.2-3b",
+      "reason": "slow + broken (valid 3/9, 75k think)",
+      "topic": "3/9",
+      "obj": 0,
+      "avg_s": 84.5
+    },
+    {
+      "model": "asl-4b",
+      "reason": "heavy thinking + weak (valid 5/9)",
+      "topic": "5/9",
+      "obj": 0,
+      "avg_s": 72.7
+    },
+    {
+      "model": "phi4-mini-reasoning",
+      "reason": "broken JSON (0/9)",
+      "topic": "0/9",
+      "obj": 0,
+      "avg_s": 60.5
+    },
+    {
+      "model": "falcon3-7b-q4km",
+      "reason": "not reasoning (8/9 valid but 0 think)",
+      "topic": "8/9",
+      "obj": 0,
+      "avg_s": 3.1
+    },
+    {
+      "model": "jan-nano-4b-q6k",
+      "reason": "not reasoning (0 think)",
+      "topic": "9/9",
+      "obj": 0,
+      "avg_s": 1.8
+    },
+    {
+      "model": "nuextract-v1.5-q8",
+      "reason": "weak overall",
+      "topic": "5/12",
+      "obj": 0.907,
+      "avg_s": 4.7
+    },
+    {
+      "model": "gemma-4-E2B",
+      "reason": "download failed x3, never evaluated",
+      "topic": "NA",
+      "obj": 0,
+      "avg_s": 0
+    },
+    {
+      "model": "small-lfm26-think-q8",
+      "reason": "deleted per user request; F1 .475 but slow 20.4s with 300s timeout; superseded by Q4_K_M 8B",
+      "topic": "7/8",
+      "obj": 0.583,
+      "avg_s": 20.4
+    },
+    {
+      "model": "small-lfm12-nova-q8",
+      "reason": "deleted per user request; weak topic 2/8 F1 .225",
+      "topic": "2/8",
+      "obj": 0.25,
+      "avg_s": 0.6
+    },
+    {
+      "model": "small-lfm12-f16",
+      "reason": "deleted per user request; weak F1 .188 obj .188",
+      "topic": "5/8",
+      "obj": 0.188,
+      "avg_s": 1.1
+    }
+  ],
+  "routing_tiers": {
+    "fast": {
+      "tag_topic": "granite-4.1-3b-q8",
+      "extract_entities": "qwen3.5-4b-super-coder-q4",
+      "self_relevance": "small-lfm26-q5km",
+      "summarize": "qwen3.5-4b-super-coder-q4"
+    },
+    "standard": {
+      "tag_topic": "nemotron3-nano",
+      "extract_entities": "nemotron3-nano",
+      "self_relevance": "small-lfm26-q5km",
+      "summarize": "nemotron3-nano"
+    },
+    "deep": {
+      "tag_topic": "ornith-1.5-9b-q4km",
+      "extract_entities": "qwen3-4b-thinking-2507-q8",
+      "self_relevance": "granite-4.2-3b-q8",
+      "summarize": "qwen3-4b-thinking-2507-q8"
+    },
+    "uncensored": {
+      "tag_topic": "small-8b-gaston-q4km",
+      "extract_entities": "small-8b-gaston-q4km",
+      "self_relevance": "granite-4.2-3b-q8",
+      "summarize": "small-8b-gaston-q4km"
+    },
+    "_meta": {
+      "policy": "3 modes: hybrid (default; heuristic fast-path + external on ambiguous) | ext-int-int (external judges EVERY row, 1 ext req/row) | int-ext-int (local judge nemotron3-nano every row; external arbitration ONLY on low-confidence/nsfw/refusal-risk/uncensored rows; ext down = local judgment stands)",
+      "deep_budget": "unlimited per router judgment (user decision 2026-08-31)",
+      "external_budget": "~1 call per ambiguous row via InferX free tier",
+      "fallback": "external down or uncensored unset -> standard tier, never block the drain",
+      "uncensored": "small-8b-gaston-q4km wired 2026-08-31: quality-gated uncensored (topic 8/8, obj .975, F1 .479) + live NSFW probe passed (judge returns nsfw/uncensored/refusal_risk=true without refusing)",
+      "vram_pairing": "2026-08-31: self_relevance fast/standard -> small-lfm26-q5km (1.9G; coexists with nemotron 3.0G). granite-4.2 4.4G+KV CPU-straddles under residency -> 150s timeouts; kept as chain fallback + deep alt with 400s timeout"
+    }
+  }
+}
