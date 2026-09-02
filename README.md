@@ -45,9 +45,11 @@ Or via env: `X_USER_ID=123 python3 harness/xb.py doctor`
 ```bash
 # verify creds + one live page
 python3 harness/xb.py --brain-dir ./data doctor
+python3 harness/xb.py --brain-dir ./data doctor --posts-only   # same for posts timeline
 
-# L1: enumerate full repost history (checkpointed, resumable)
+# L1: enumerate reposts — or posts with --posts-only (originals only, separate cursor)
 python3 harness/xb.py --brain-dir ./data enum --resume
+python3 harness/xb.py --brain-dir ./data enum --posts-only --resume
 
 # L2: thread context (Fx fallback built-in)
 python3 harness/xb.py --brain-dir ./data enrich

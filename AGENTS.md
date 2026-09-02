@@ -45,14 +45,13 @@ A local-first, 5-level pipeline that turns any X account's reposts into `state.s
   run_text_ox.sh           # resilient llm-run --workers 4 loop → $XBRAIN_DIR/llm_ox.log
   run_links_deep.sh        # links-run → deep-run chain
   run_vision.sh            # resilient vision-run --workers 2 loop
-  .opencode/skills/x-brain/SKILL.md  # opencode skill copy (same as SKILL.md)
 ```
 
 ## How to run (agent workflow)
 
 1. **Configure** — never hard-code. `cp .env.example .env` or pass `--brain-dir`/`--user-id` flags. Keys: `X_USER_ID` (numeric), `X_AUTH_TOKEN`, `X_CT0` (both from DevTools → Application → Cookies → x.com). Optional `INFERX_API_KEY`, `OPENROUTER_API_KEY`, `XBRAIN_DIR`, `XBRAIN_CATALOG`. See `session.py:get_brain_dir`, `load_creds`, `require_user_id`.
-2. **Doctor** — `python3 harness/xb.py --brain-dir ./data doctor` probes one live page via `_make_lane()` → `protocol.build_url` → `lane.fetch_page(uid)`.
-3. **L1→L2→L3→L4→L5→deep→fuse→graph** — in order; `fuse-run` must be last (needs all signals). All stages resume cleanly (`store.py:SCHEMA`, `kv_get("enum_cursor")`, `expire_llm_leases()`). See `harness/README.md:3` diagram.
+2. **Doctor** — `python3 harness/xb.py --brain-dir ./data doctor` probes reposts; `--posts-only` probes `UserTweets` via `protocol.build_url(kind=posts)`. Via `_make_lane()` → `lane.fetch_page(uid, kind)`.
+3. **L1→L2→L3→L4→L5→deep→fuse→graph** — in order; `fuse-run` must be last (needs all signals). All stages resume cleanly (`store.py:SCHEMA`, per-kind `enum_cursor`/`enum_cursor_posts`, `expire_llm_leases()`). `--posts-only` (`xb.py:enum --posts-only`) drives `UserTweets` → filters to originals only (reposts dropped), stored with `kind='post'`; reposts remain `kind='repost'`. Comments/replies are **not** handled here — they need `SearchTimeline`/`UserTweetsAndReplies` + ancestor BFS (design note in `xbrain/enum.py:1`). See `harness/README.md:3` diagram.
 4. **Routing** — `llm-run --route --mode hybrid|ext-int-int|int-ext-int --backends ollama,inferx,or-nemotron --judge-model nemotron3-nano --judge-backup granite-4.2-3b-q8 --catalog ./config/models.json`. Tiers entirely from `config/models.json:routing_tiers`. Startup prints `AVAILABLE`/`MISSING`. Per-row audit in `route_tier`/`route_json`/`model_used` + `drain_calls.log`.
 5. **Monitor** — `tail -f $XBRAIN_DIR/drain_calls.log` (every call) + `xbrain_drain.log` (per-row `[drain] N/TOTAL | tier | id | cards ok`). `sqlite3 $XBRAIN_DIR/state.sqlite "SELECT stage, COUNT(*) FROM tweets GROUP BY stage"` is ground truth. If drain log stalls but calls log advances, it's a `deep` row (`qwen3-4b-thinking` 214-375s) — check `curl http://localhost:11434/api/ps`.
 6. **Cleanup** — never `sed -i` an open drain log (detaches fd → `(deleted)`). Never commit `state.sqlite*`, `vault/`, `*.log`, `.env`.
@@ -61,8 +60,8 @@ A local-first, 5-level pipeline that turns any X account's reposts into `state.s
 
 | Task | File |
 |------|------|
-| change target user | `xbrain/session.py:load_user_id`, `xbrain/protocol.py:build_url`, `harness/xb.py:cmd_auth/cmd_enum/cmd_doctor` |
-| change headers / QIDs / FEATURES | `xbrain/protocol.py:22-85` (QID_REPOSTS rotates on X deploys) |
+| change target user | `xbrain/session.py:load_user_id`, `xbrain/protocol.py:build_url(kind)`, `harness/xb.py:cmd_auth/cmd_enum/cmd_doctor` |
+| change headers / QIDs / FEATURES | `xbrain/protocol.py:22-85` (QID_REPOSTS/QID_POSTS rotate; override via `X_QID_POSTS` env) |
 | rate limits / 429 handling | `xbrain/ratelimit.py`, `xbrain/lane.py:TxRateLimiter` |
 | DB schema / quarantine / leases | `xbrain/store.py:SCHEMA`, `save_*`, `pending_*`, `expire_llm_leases` |
 | cards / schemas / fusion | `xbrain/llm.py:STUDY_PROMPT`, `*_SCHEMA`, `build_link_context`, `fuse_row`, `LlmWorker` |
@@ -88,8 +87,10 @@ A local-first, 5-level pipeline that turns any X account's reposts into `state.s
 python3 harness/xb.py --help
 python3 harness/xb.py --brain-dir ./data auth --auth-token ... --ct0 ... --user-id 123
 python3 harness/xb.py --brain-dir ./data doctor
+python3 harness/xb.py --brain-dir ./data doctor --posts-only
 python3 harness/xb.py --brain-dir ./data enum --resume --max-pages 2
-python3 harness/xb.py --brain-dir ./data stats
+python3 harness/xb.py --brain-dir ./data enum --posts-only --resume --max-pages 2
+python3 harness/xb.py --brain-dir ./data stats   # shows reposts/posts cursors + kind breakdown
 python3 harness/xb.py --brain-dir ./data graph-export --out ./data/vault --min-cooccur 2 --min-mentions 2
 # drain variants
 python3 harness/xb.py --brain-dir ./data llm-run --route --mode hybrid --backends ollama

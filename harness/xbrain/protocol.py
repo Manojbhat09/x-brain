@@ -36,6 +36,10 @@ GRAPHQL_BASE = "https://x.com/i/api/graphql"
 OP_REPOSTS = "UserRepostsTimeline"
 QID_REPOSTS = "bV_DHAIvQ945LAA1-eIIow"  # captured live 2026-08-24; rotates on X deploys
 
+OP_POSTS = "UserTweets"  # posts-only timeline (originals + reposts; filtered by kind downstream)
+# QID for UserTweets — pinned from DeleteTweets x-cli study; override via X_QID_POSTS env or .env
+QID_POSTS = "6r5OLCC_wFH4CpRyXKuAmQ"
+
 OP_TWEET = "TweetResultByRestId"  # per-ID fetch (L2 enrichment)
 QID_TWEET = "8CEYnZhCp0dx9DFyyEBlbQ"  # from x-cli table; overridable via config
 
@@ -130,6 +134,10 @@ def generate_tid(method: str, path: str, pair: dict) -> str:
 # --- request building --------------------------------------------------------
 
 
+def _qid_posts() -> str:
+    import os as _os
+    return _os.environ.get("X_QID_POSTS") or _os.environ.get("QID_POSTS") or QID_POSTS
+
 def build_variables(user_id: str, cursor: str | None, count: int = 20) -> dict:
     v: dict = {
         "userId": user_id,
@@ -142,14 +150,18 @@ def build_variables(user_id: str, cursor: str | None, count: int = 20) -> dict:
     return v
 
 
-def build_url(user_id: str, cursor: str | None, count: int = 20) -> str:
-    """POST <base>/<qid>/UserRepostsTimeline?variables=&features=&fieldToggles= (empty body)."""
+def build_url(user_id: str, cursor: str | None, count: int = 20, kind: str = "reposts") -> str:
+    """POST <base>/<qid>/<Op>?variables=&features=&fieldToggles= (empty body). kind: reposts|posts."""
+    if kind == "posts":
+        qid, op = _qid_posts(), OP_POSTS
+    else:
+        qid, op = QID_REPOSTS, OP_REPOSTS
     qs = (
         f"variables={quote(json.dumps(build_variables(user_id, cursor, count), separators=(',', ':')))}"
         f"&features={quote(json.dumps(FEATURES, separators=(',', ':')))}"
         f"&fieldToggles={quote(json.dumps(FIELD_TOGGLES, separators=(',', ':')))}"
     )
-    return f"{GRAPHQL_BASE}/{QID_REPOSTS}/{OP_REPOSTS}?{qs}"
+    return f"{GRAPHQL_BASE}/{qid}/{op}?{qs}"
 
 
 def build_headers(creds: dict, url: str, tid_pairs: list[dict]) -> dict:

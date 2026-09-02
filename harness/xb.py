@@ -49,10 +49,11 @@ def cmd_doctor(args) -> int:
     lane = _make_lane(args)
     store = Store(bd)
     uid = sess.require_user_id(bd, getattr(args, "user_id", None))
-    print(f"creds: ok | user_id: {uid} | brain: {bd}")
-    print(lane.status())
+    kind = "posts" if getattr(args, "posts_only", False) else "reposts"
+    print(f"creds: ok | user_id: {uid} | kind: {kind} | brain: {bd}")
+    print(lane.status(kind))
     try:
-        items, cursor = lane.fetch_page(uid, None, 1)
+        items, cursor = lane.fetch_page(uid, None, 1, kind=kind)
         print(f"probe page: {len(items)} item(s), cursor={'yes' if cursor else 'no'}")
         if items:
             it = items[0]
@@ -69,7 +70,8 @@ def cmd_enum(args) -> int:
     lane = _make_lane(args)
     store = Store(bd)
     uid = sess.require_user_id(bd, getattr(args, "user_id", None))
-    en = Enumerator(lane, store, uid, count=args.count)
+    kind = "posts" if getattr(args, "posts_only", False) else "reposts"
+    en = Enumerator(lane, store, uid, count=args.count, kind=kind)
     result = en.run(resume=args.resume, max_pages=args.max_pages)
     print(result)
     return 0
@@ -361,8 +363,16 @@ def cmd_stats(args) -> int:
     bd = _brain_dir(args)
     store = Store(bd)
     print(store.stats())
-    cur = store.kv_get("enum_cursor")
-    print(f"cursor checkpoint: {'set' if cur else 'none'} | done: {store.kv_get('enum_done')}")
+    for kind, ck, dk in [("reposts","enum_cursor","enum_done"),("posts","enum_cursor_posts","enum_done_posts")]:
+        cur = store.kv_get(ck)
+        print(f"{kind:7s} cursor: {'set' if cur else 'none'} | done: {store.kv_get(dk)}")
+    # kind breakdown if column exists
+    try:
+        rows = store.db.execute("SELECT COALESCE(kind,'repost'), COUNT(*) FROM tweets GROUP BY kind").fetchall()
+        if rows:
+            print("kind breakdown:", ", ".join(f"{k}={n}" for k,n in rows))
+    except Exception:
+        pass
     return 0
 
 
@@ -379,12 +389,14 @@ def main() -> int:
     p.set_defaults(fn=cmd_auth)
 
     p = sub.add_parser("doctor", help="verify creds + one live page")
+    p.add_argument("--posts-only", action="store_true", help="use posts timeline (UserTweets) instead of reposts")
     p.set_defaults(fn=cmd_doctor)
 
-    p = sub.add_parser("enum", help="enumerate reposts (L1)")
+    p = sub.add_parser("enum", help="enumerate timeline (L1)")
     p.add_argument("--resume", action="store_true", help="continue from checkpoint")
     p.add_argument("--max-pages", type=int, default=0, help="0 = until end")
     p.add_argument("--count", type=int, default=20, help="items per page (try 50)")
+    p.add_argument("--posts-only", action="store_true", help="enumerate posts (UserTweets) instead of reposts")
     p.set_defaults(fn=cmd_enum)
 
     p = sub.add_parser("enrich", help="L2 thread enrichment for discovered tweets")
