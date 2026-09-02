@@ -1,0 +1,2815 @@
+vision fail 2091753007797223641: all vision backends failed after 26 waits: openrouter 429
+vision fail 2091695379381375421: all vision backends failed after 26 waits: openrouter 429
+vision fail 2091690393171787966: all vision backends failed after 26 waits: openrouter 429
+    [nemotron] OK in 53s
+    [nemotron] OK in 27s
+    [nemotron] OK in 20s
+    [nemotron] OK in 37s
+    [nemotron] OK in 26s
+    [nemotron] OK in 23s
+    [nemotron] FAIL 32s: nemotron unreachable: ('Connection aborted.', TimeoutError('The write operation 
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 31s: nemotron unreachable: ('Connection aborted.', TimeoutError('The write operation 
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 31s: nemotron unreachable: ('Connection aborted.', TimeoutError('The write operation 
+    [ox-alpha] FAIL 3s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 31s: nemotron unreachable: ('Connection aborted.', TimeoutError('The write operation 
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 31s: nemotron unreachable: ('Connection aborted.', TimeoutError('The write operation 
+    [ox-alpha] OK in 16s
+    [nemotron] cooling down
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] OK in 25s
+    [nemotron] OK in 30s
+    [nemotron] OK in 14s
+    [nemotron] OK in 9s
+    [nemotron] OK in 10s
+    [nemotron] FAIL 31s: nemotron unreachable: ('Connection aborted.', TimeoutError('The write operation 
+    [nemotron] ERR 37s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] OK in 42s
+    [nemotron] OK in 7s
+    [nemotron] OK in 15s
+    [nemotron] OK in 17s
+    [nemotron] OK in 10s
+    [nemotron] OK in 28s
+    [nemotron] OK in 33s
+    [nemotron] OK in 4s
+    [nemotron] OK in 15s
+    [nemotron] OK in 8s
+    [nemotron] OK in 16s
+    [nemotron] OK in 17s
+    [nemotron] OK in 16s
+    [nemotron] OK in 20s
+    [nemotron] OK in 7s
+    [nemotron] OK in 31s
+    [nemotron] OK in 15s
+    [nemotron] OK in 14s
+    [nemotron] OK in 24s
+    [nemotron] OK in 15s
+    [nemotron] OK in 19s
+    [nemotron] OK in 8s
+    [nemotron] OK in 22s
+    [nemotron] OK in 5s
+    [nemotron] OK in 21s
+vision: 25 done | {'ox-alpha': 1, 'nemotron': 24}
+    [nemotron] OK in 12s
+    [nemotron] OK in 22s
+    [nemotron] OK in 14s
+    [nemotron] OK in 17s
+    [nemotron] OK in 16s
+    [nemotron] OK in 17s
+    [nemotron] OK in 31s
+    [nemotron] OK in 8s
+    [nemotron] OK in 12s
+    [nemotron] OK in 13s
+    [nemotron] OK in 19s
+    [nemotron] OK in 17s
+    [nemotron] OK in 15s
+    [nemotron] OK in 15s
+    [nemotron] OK in 6s
+    [nemotron] OK in 18s
+    [nemotron] OK in 15s
+    [nemotron] OK in 8s
+    [nemotron] OK in 13s
+    [nemotron] OK in 13s
+    [nemotron] OK in 23s
+    [nemotron] ERR 18s: no JSON in vision reply
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] ERR 19s: no JSON in vision reply
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] ERR 16s: no JSON in vision reply
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] ERR 16s: no JSON in vision reply
+    [ox-alpha] OK in 25s
+    [nemotron] OK in 26s
+    [nemotron] OK in 20s
+    [nemotron] OK in 13s
+vision: 50 done | {'ox-alpha': 2, 'nemotron': 48}
+    [nemotron] OK in 18s
+    [nemotron] OK in 16s
+    [nemotron] OK in 25s
+    [nemotron] OK in 14s
+    [nemotron] OK in 12s
+    [nemotron] OK in 10s
+    [nemotron] OK in 27s
+    [nemotron] OK in 30s
+    [nemotron] OK in 19s
+    [nemotron] OK in 26s
+    [nemotron] OK in 19s
+    [nemotron] OK in 23s
+    [nemotron] OK in 34s
+    [nemotron] OK in 10s
+    [nemotron] OK in 32s
+    [nemotron] OK in 31s
+    [nemotron] OK in 36s
+    [nemotron] OK in 14s
+    [nemotron] OK in 27s
+    [nemotron] OK in 24s
+    [nemotron] OK in 19s
+    [nemotron] OK in 11s
+    [nemotron] OK in 7s
+    [nemotron] OK in 10s
+    [nemotron] OK in 14s
+vision: 75 done | {'ox-alpha': 2, 'nemotron': 73}
+    [nemotron] OK in 23s
+    [nemotron] OK in 6s
+    [nemotron] OK in 15s
+    [nemotron] ERR 44s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 121s: openrouter 429
+    [nemotron] ERR 40s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] OK in 33s
+    [nemotron] OK in 23s
+    [nemotron] OK in 12s
+    [nemotron] OK in 24s
+    [nemotron] OK in 17s
+    [nemotron] OK in 29s
+    [nemotron] OK in 16s
+    [nemotron] OK in 16s
+    [nemotron] OK in 15s
+    [nemotron] OK in 7s
+    [nemotron] OK in 11s
+    [nemotron] OK in 16s
+    [nemotron] OK in 11s
+    [nemotron] OK in 15s
+    [nemotron] OK in 11s
+    [nemotron] OK in 16s
+    [nemotron] OK in 23s
+    [nemotron] OK in 5s
+    [nemotron] OK in 4s
+    [nemotron] OK in 12s
+    [nemotron] OK in 11s
+    [nemotron] OK in 17s
+vision: 100 done | {'ox-alpha': 3, 'nemotron': 97}
+    [nemotron] OK in 31s
+    [nemotron] OK in 8s
+    [nemotron] OK in 23s
+    [nemotron] OK in 22s
+    [nemotron] OK in 15s
+    [nemotron] OK in 26s
+    [nemotron] OK in 35s
+    [nemotron] OK in 13s
+    [nemotron] OK in 24s
+    [nemotron] OK in 16s
+    [nemotron] OK in 13s
+    [nemotron] OK in 18s
+    [nemotron] OK in 18s
+    [nemotron] OK in 18s
+    [nemotron] OK in 21s
+    [nemotron] OK in 18s
+    [nemotron] ERR 33s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] OK in 31s
+    [nemotron] OK in 10s
+    [nemotron] OK in 8s
+    [nemotron] OK in 27s
+    [nemotron] OK in 11s
+    [nemotron] OK in 20s
+    [nemotron] OK in 13s
+    [nemotron] OK in 20s
+    [nemotron] OK in 27s
+vision: 125 done | {'ox-alpha': 3, 'nemotron': 122}
+    [nemotron] OK in 24s
+    [nemotron] OK in 11s
+    [nemotron] OK in 23s
+    [nemotron] OK in 5s
+    [nemotron] OK in 13s
+    [nemotron] OK in 14s
+    [nemotron] OK in 29s
+    [nemotron] OK in 11s
+    [nemotron] OK in 22s
+    [nemotron] OK in 13s
+    [nemotron] OK in 31s
+    [nemotron] OK in 10s
+    [nemotron] OK in 26s
+    [nemotron] OK in 8s
+    [nemotron] OK in 18s
+    [nemotron] OK in 33s
+    [nemotron] OK in 19s
+    [nemotron] OK in 19s
+    [nemotron] OK in 19s
+    [nemotron] ERR 31s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] OK in 30s
+    [nemotron] OK in 10s
+    [nemotron] OK in 8s
+    [nemotron] OK in 12s
+    [nemotron] OK in 13s
+    [nemotron] OK in 31s
+vision: 150 done | {'ox-alpha': 3, 'nemotron': 147}
+    [nemotron] OK in 12s
+    [nemotron] OK in 18s
+    [nemotron] OK in 16s
+    [nemotron] OK in 7s
+    [nemotron] OK in 23s
+    [nemotron] OK in 13s
+    [nemotron] OK in 12s
+    [nemotron] OK in 7s
+    [nemotron] OK in 22s
+    [nemotron] OK in 26s
+    [nemotron] OK in 19s
+    [nemotron] OK in 10s
+    [nemotron] OK in 25s
+    [nemotron] OK in 13s
+    [nemotron] OK in 31s
+    [nemotron] OK in 28s
+    [nemotron] OK in 10s
+    [nemotron] OK in 28s
+    [nemotron] OK in 27s
+    [nemotron] ERR 38s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] ERR 35s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] ERR 36s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] ERR 34s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] ERR 36s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] OK in 54s
+    [nemotron] OK in 26s
+    [nemotron] OK in 27s
+    [nemotron] OK in 13s
+    [nemotron] OK in 30s
+    [nemotron] OK in 22s
+vision: 175 done | {'ox-alpha': 4, 'nemotron': 171}
+    [nemotron] ERR 46s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] ERR 36s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] ERR 41s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] ERR 34s: no JSON in vision reply
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] ERR 42s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] ERR 28s: no JSON in vision reply
+    [gemma-4-31b] cooling down
+    [nemotron] ERR 44s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] ERR 39s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] ERR 40s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] ERR 60s: no JSON in vision reply
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] ERR 43s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] cooling down
+    [nemotron] ERR 38s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] cooling down
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] ERR 46s: 504 Server Error: Gateway Timeout for url: https://model.inferx.net/funccall/tn-
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] cooling down
+=== worker exited, restarting in 10s: Tue Aug 25 01:42:43 PDT 2026 ===
+    [nemotron] FAIL 76s: nemotron 504 after warm retry
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 82s: nemotron 504 after warm retry
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 85s: nemotron 504 after warm retry
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 89s: nemotron 504 after warm retry
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 82s: nemotron 504 after warm retry
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 75s: nemotron 504 after warm retry
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 93s: nemotron 504 after warm retry
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 81s: nemotron 504 after warm retry
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 79s: nemotron 504 after warm retry
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 82s: nemotron 504 after warm retry
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 79s: nemotron 504 after warm retry
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 83s: nemotron 504 after warm retry
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+=== worker exited, restarting in 10s: Tue Aug 25 02:11:42 PDT 2026 ===
+    [nemotron] FAIL 87s: nemotron 504 after warm retry
+    [ox-alpha] ERR 13s: no JSON in vision reply
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 88s: nemotron 504 after warm retry
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 46s: nemotron wedged (3x504) — backing off 10 min
+    [ox-alpha] cooling down
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] ERR 12s: no JSON in vision reply
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 80s: nemotron 504 after warm retry
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 76s: nemotron 504 after warm retry
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 39s: nemotron wedged (3x504) — backing off 10 min
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] ERR 10s: no JSON in vision reply
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] ERR 10s: no JSON in vision reply
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+=== worker exited, restarting in 10s: Tue Aug 25 02:42:52 PDT 2026 ===
+    [nemotron] OK in 45s
+    [nemotron] OK in 398s
+    [nemotron] OK in 9s
+    [nemotron] OK in 10s
+    [nemotron] OK in 32s
+    [nemotron] OK in 18s
+    [nemotron] OK in 7s
+    [nemotron] ERR 7s: no JSON in vision reply
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] ERR 8s: no JSON in vision reply
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] ERR 6s: no JSON in vision reply
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] ERR 8s: no JSON in vision reply
+    [ox-alpha] OK in 16s
+    [nemotron] OK in 38s
+    [nemotron] OK in 26s
+    [nemotron] OK in 13s
+    [nemotron] OK in 6s
+=== worker exited, restarting in 10s: Tue Aug 25 02:57:11 PDT 2026 ===
+    [nemotron] OK in 23s
+    [nemotron] OK in 8s
+    [nemotron] OK in 17s
+    [nemotron] OK in 16s
+    [nemotron] OK in 32s
+    [nemotron] OK in 11s
+    [nemotron] OK in 9s
+    [nemotron] OK in 42s
+    [nemotron] OK in 22s
+    [nemotron] OK in 9s
+    [nemotron] OK in 10s
+    [nemotron] OK in 13s
+    [nemotron] OK in 10s
+    [nemotron] OK in 21s
+    [nemotron] OK in 15s
+    [nemotron] PARSE-FAIL 13s (1/3)
+    [nemotron] PARSE-FAIL 12s (2/3)
+    [nemotron] PARSE-FAIL 12s (3/3)
+    [nemotron] OK in 21s
+    [nemotron] OK in 12s
+    [nemotron] OK in 19s
+    [nemotron] OK in 14s
+    [nemotron] OK in 18s
+    [nemotron] OK in 11s
+    [nemotron] OK in 26s
+    [nemotron] OK in 10s
+    [nemotron] OK in 12s
+vision: 25 done | {'nemotron': 25}
+    [nemotron] OK in 16s
+    [nemotron] OK in 12s
+    [nemotron] OK in 10s
+    [nemotron] OK in 11s
+    [nemotron] OK in 13s
+    [nemotron] OK in 6s
+    [nemotron] OK in 9s
+    [nemotron] OK in 10s
+    [nemotron] OK in 12s
+    [nemotron] OK in 8s
+    [nemotron] OK in 24s
+    [nemotron] OK in 13s
+    [nemotron] OK in 18s
+    [nemotron] OK in 13s
+    [nemotron] OK in 17s
+    [nemotron] OK in 4s
+    [nemotron] OK in 11s
+    [nemotron] OK in 7s
+    [nemotron] OK in 24s
+    [nemotron] OK in 8s
+    [nemotron] OK in 17s
+    [nemotron] OK in 39s
+    [nemotron] OK in 12s
+    [nemotron] OK in 38s
+    [nemotron] OK in 15s
+vision: 50 done | {'nemotron': 50}
+    [nemotron] OK in 17s
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 1s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+=== worker exited, restarting in 10s: Tue Aug 25 03:14:29 PDT 2026 ===
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 121s: openrouter 429
+    [gemma-4-31b] FAIL 120s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] OK in 12s
+    [nemotron] OK in 34s
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] OK in 38s
+    [nemotron] OK in 10s
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+=== worker exited, restarting in 10s: Tue Aug 25 03:30:07 PDT 2026 ===
+    [nemotron] OK in 30s
+    [nemotron] OK in 16s
+    [nemotron] OK in 9s
+    [nemotron] OK in 10s
+    [nemotron] OK in 21s
+    [nemotron] OK in 27s
+    [nemotron] OK in 18s
+    [nemotron] OK in 16s
+    [nemotron] OK in 14s
+    [nemotron] OK in 7s
+    [nemotron] OK in 8s
+    [nemotron] OK in 10s
+    [nemotron] OK in 10s
+    [nemotron] OK in 16s
+    [nemotron] OK in 17s
+    [nemotron] OK in 12s
+    [nemotron] OK in 13s
+    [nemotron] OK in 42s
+    [nemotron] OK in 107s
+    [nemotron] OK in 29s
+    [nemotron] OK in 10s
+=== worker exited, restarting in 10s: Tue Aug 25 03:36:06 PDT 2026 ===
+    [nemotron] OK in 19s
+    [nemotron] FAIL 187s: nemotron unreachable after retries: HTTPSConnectionPool(host='model.inferx.net',
+    [ox-alpha] OK in 20s
+    [nemotron] cooling down
+    [ox-alpha] OK in 26s
+    [nemotron] cooling down
+    [ox-alpha] OK in 18s
+    [nemotron] OK in 108s
+    [nemotron] OK in 85s
+    [nemotron] OK in 231s
+    [nemotron] OK in 14s
+    [nemotron] OK in 23s
+    [nemotron] OK in 12s
+    [nemotron] OK in 23s
+    [nemotron] OK in 15s
+    [nemotron] OK in 8s
+    [nemotron] OK in 157s
+    [nemotron] OK in 20s
+    [nemotron] OK in 14s
+    [nemotron] OK in 26s
+    [nemotron] OK in 20s
+    [nemotron] OK in 131s
+    [nemotron] OK in 18s
+    [nemotron] OK in 9s
+    [nemotron] OK in 15s
+    [nemotron] OK in 12s
+    [nemotron] OK in 13s
+    [nemotron] OK in 34s
+vision: 25 done | {'nemotron': 22, 'ox-alpha': 3}
+    [nemotron] OK in 89s
+    [nemotron] OK in 112s
+    [nemotron] OK in 147s
+    [nemotron] OK in 99s
+    [nemotron] OK in 12s
+    [nemotron] OK in 14s
+    [nemotron] OK in 31s
+    [nemotron] OK in 147s
+    [nemotron] OK in 14s
+    [nemotron] OK in 82s
+    [nemotron] OK in 11s
+    [nemotron] OK in 17s
+    [nemotron] OK in 21s
+    [nemotron] OK in 9s
+    [nemotron] OK in 18s
+    [nemotron] OK in 14s
+    [nemotron] OK in 16s
+    [nemotron] OK in 8s
+    [nemotron] OK in 89s
+    [nemotron] OK in 10s
+    [nemotron] OK in 19s
+    [nemotron] OK in 19s
+    [nemotron] OK in 10s
+    [nemotron] OK in 11s
+    [nemotron] OK in 103s
+vision: 50 done | {'nemotron': 47, 'ox-alpha': 3}
+    [nemotron] OK in 22s
+    [nemotron] OK in 26s
+    [nemotron] OK in 16s
+    [nemotron] OK in 12s
+    [nemotron] OK in 10s
+    [nemotron] OK in 9s
+    [nemotron] OK in 10s
+    [nemotron] OK in 15s
+    [nemotron] OK in 170s
+    [nemotron] OK in 15s
+    [nemotron] OK in 6s
+    [nemotron] OK in 24s
+    [nemotron] OK in 19s
+    [nemotron] OK in 21s
+    [nemotron] OK in 19s
+    [nemotron] OK in 5s
+    [nemotron] OK in 138s
+    [nemotron] OK in 13s
+    [nemotron] OK in 22s
+    [nemotron] OK in 12s
+    [nemotron] OK in 147s
+    [nemotron] OK in 15s
+    [nemotron] OK in 76s
+    [nemotron] FAIL 186s: nemotron unreachable after retries: HTTPSConnectionPool(host='model.inferx.net',
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] OK in 5s
+    [nemotron] OK in 14s
+vision: 75 done | {'nemotron': 72, 'ox-alpha': 3}
+    [nemotron] OK in 32s
+    [nemotron] OK in 16s
+    [nemotron] OK in 75s
+    [nemotron] OK in 76s
+    [nemotron] OK in 12s
+    [nemotron] OK in 14s
+    [nemotron] OK in 17s
+    [nemotron] OK in 75s
+    [nemotron] OK in 25s
+    [nemotron] OK in 31s
+    [nemotron] OK in 25s
+    [nemotron] OK in 110s
+    [nemotron] OK in 27s
+    [nemotron] OK in 17s
+    [nemotron] OK in 74s
+    [nemotron] OK in 142s
+    [nemotron] OK in 14s
+    [nemotron] OK in 76s
+    [nemotron] OK in 6s
+    [nemotron] OK in 24s
+    [nemotron] OK in 19s
+    [nemotron] OK in 74s
+    [nemotron] OK in 25s
+    [nemotron] OK in 38s
+    [nemotron] OK in 41s
+vision: 100 done | {'nemotron': 97, 'ox-alpha': 3}
+    [nemotron] OK in 86s
+    [nemotron] OK in 9s
+    [nemotron] OK in 18s
+    [nemotron] OK in 10s
+    [nemotron] OK in 23s
+    [nemotron] OK in 21s
+    [nemotron] OK in 17s
+    [nemotron] OK in 21s
+    [nemotron] OK in 10s
+    [nemotron] OK in 12s
+    [nemotron] FAIL 187s: nemotron unreachable after retries: HTTPSConnectionPool(host='model.inferx.net',
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] OK in 13s
+    [nemotron] OK in 11s
+    [nemotron] OK in 10s
+    [nemotron] OK in 56s
+    [nemotron] OK in 69s
+    [nemotron] OK in 74s
+    [nemotron] OK in 18s
+    [nemotron] OK in 14s
+    [nemotron] OK in 5s
+    [nemotron] OK in 19s
+    [nemotron] OK in 30s
+    [nemotron] OK in 73s
+    [nemotron] OK in 8s
+    [nemotron] OK in 18s
+    [nemotron] OK in 102s
+vision: 125 done | {'nemotron': 122, 'ox-alpha': 3}
+    [nemotron] OK in 74s
+    [nemotron] OK in 5s
+    [nemotron] OK in 7s
+    [nemotron] OK in 76s
+    [nemotron] OK in 16s
+    [nemotron] OK in 139s
+    [nemotron] OK in 174s
+    [nemotron] OK in 9s
+    [nemotron] OK in 12s
+    [nemotron] OK in 12s
+    [nemotron] OK in 21s
+    [nemotron] OK in 16s
+    [nemotron] OK in 82s
+    [nemotron] OK in 78s
+    [nemotron] OK in 13s
+    [nemotron] OK in 72s
+    [nemotron] OK in 76s
+    [nemotron] OK in 15s
+    [nemotron] OK in 7s
+    [nemotron] OK in 8s
+    [nemotron] OK in 11s
+    [nemotron] FAIL 186s: nemotron unreachable after retries: HTTPSConnectionPool(host='model.inferx.net',
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] OK in 7s
+    [nemotron] OK in 20s
+    [nemotron] OK in 92s
+    [nemotron] OK in 11s
+vision: 150 done | {'nemotron': 147, 'ox-alpha': 3}
+    [nemotron] OK in 78s
+    [nemotron] OK in 12s
+    [nemotron] OK in 14s
+    [nemotron] OK in 14s
+    [nemotron] OK in 138s
+    [nemotron] OK in 12s
+    [nemotron] OK in 102s
+    [nemotron] FAIL 188s: nemotron unreachable after retries: HTTPSConnectionPool(host='model.inferx.net',
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] OK in 27s
+    [nemotron] OK in 18s
+    [nemotron] OK in 7s
+    [nemotron] OK in 12s
+    [nemotron] OK in 18s
+    [nemotron] OK in 28s
+    [nemotron] OK in 11s
+    [nemotron] OK in 20s
+    [nemotron] OK in 8s
+    [nemotron] OK in 8s
+    [nemotron] OK in 32s
+    [nemotron] OK in 10s
+    [nemotron] OK in 21s
+    [nemotron] OK in 86s
+    [nemotron] OK in 20s
+    [nemotron] OK in 12s
+    [nemotron] OK in 12s
+    [nemotron] OK in 11s
+vision: 175 done | {'nemotron': 172, 'ox-alpha': 3}
+    [nemotron] OK in 71s
+    [nemotron] OK in 11s
+    [nemotron] OK in 12s
+    [nemotron] OK in 11s
+    [nemotron] OK in 91s
+    [nemotron] OK in 84s
+    [nemotron] OK in 11s
+    [nemotron] OK in 153s
+    [nemotron] OK in 15s
+    [nemotron] OK in 76s
+    [nemotron] OK in 39s
+    [nemotron] OK in 52s
+    [nemotron] OK in 32s
+    [nemotron] OK in 10s
+    [nemotron] OK in 13s
+    [nemotron] OK in 73s
+    [nemotron] OK in 111s
+    [nemotron] OK in 12s
+    [nemotron] OK in 19s
+    [nemotron] OK in 78s
+    [nemotron] OK in 11s
+    [nemotron] OK in 11s
+    [nemotron] OK in 10s
+    [nemotron] OK in 8s
+    [nemotron] OK in 35s
+vision: 200 done | {'nemotron': 197, 'ox-alpha': 3}
+    [nemotron] OK in 73s
+    [nemotron] OK in 11s
+    [nemotron] OK in 135s
+    [nemotron] OK in 13s
+    [nemotron] OK in 96s
+    [nemotron] OK in 80s
+    [nemotron] OK in 11s
+    [nemotron] OK in 56s
+    [nemotron] OK in 9s
+    [nemotron] OK in 92s
+    [nemotron] OK in 11s
+    [nemotron] OK in 15s
+    [nemotron] OK in 101s
+    [nemotron] OK in 6s
+    [nemotron] OK in 24s
+    [nemotron] OK in 20s
+    [nemotron] OK in 7s
+    [nemotron] OK in 18s
+    [nemotron] OK in 15s
+    [nemotron] OK in 6s
+    [nemotron] OK in 18s
+    [nemotron] OK in 109s
+    [nemotron] OK in 75s
+    [nemotron] OK in 26s
+    [nemotron] OK in 8s
+vision: 225 done | {'nemotron': 222, 'ox-alpha': 3}
+    [nemotron] OK in 13s
+    [nemotron] OK in 14s
+    [nemotron] OK in 8s
+    [nemotron] OK in 14s
+    [nemotron] OK in 7s
+    [nemotron] OK in 9s
+    [nemotron] OK in 73s
+    [nemotron] OK in 76s
+    [nemotron] OK in 12s
+    [nemotron] OK in 11s
+    [nemotron] OK in 135s
+    [nemotron] OK in 57s
+    [nemotron] OK in 8s
+    [nemotron] OK in 12s
+    [nemotron] OK in 26s
+    [nemotron] OK in 78s
+    [nemotron] OK in 21s
+    [nemotron] OK in 10s
+    [nemotron] OK in 10s
+    [nemotron] OK in 9s
+    [nemotron] OK in 75s
+    [nemotron] OK in 13s
+    [nemotron] OK in 22s
+    [nemotron] OK in 14s
+    [nemotron] OK in 19s
+vision: 250 done | {'nemotron': 247, 'ox-alpha': 3}
+    [nemotron] OK in 13s
+    [nemotron] OK in 10s
+    [nemotron] OK in 28s
+    [nemotron] OK in 10s
+    [nemotron] OK in 15s
+    [nemotron] OK in 9s
+    [nemotron] OK in 86s
+    [nemotron] OK in 22s
+    [nemotron] OK in 12s
+    [nemotron] OK in 81s
+    [nemotron] OK in 8s
+    [nemotron] OK in 8s
+    [nemotron] OK in 10s
+    [nemotron] OK in 42s
+    [nemotron] OK in 9s
+    [nemotron] OK in 80s
+    [nemotron] OK in 6s
+    [nemotron] OK in 83s
+    [nemotron] OK in 10s
+    [nemotron] OK in 22s
+    [nemotron] OK in 59s
+    [nemotron] OK in 23s
+    [nemotron] OK in 14s
+    [nemotron] OK in 84s
+    [nemotron] OK in 12s
+vision: 275 done | {'nemotron': 272, 'ox-alpha': 3}
+    [nemotron] OK in 18s
+    [nemotron] OK in 7s
+    [nemotron] OK in 73s
+    [nemotron] OK in 75s
+    [nemotron] OK in 159s
+    [nemotron] OK in 38s
+    [nemotron] OK in 14s
+    [nemotron] OK in 134s
+    [nemotron] OK in 13s
+    [nemotron] OK in 16s
+    [nemotron] OK in 94s
+    [nemotron] OK in 16s
+    [nemotron] OK in 12s
+    [nemotron] OK in 21s
+    [nemotron] OK in 13s
+    [nemotron] OK in 11s
+    [nemotron] OK in 135s
+    [nemotron] OK in 25s
+    [nemotron] OK in 20s
+    [nemotron] OK in 6s
+    [nemotron] OK in 18s
+    [nemotron] OK in 142s
+    [nemotron] OK in 10s
+    [nemotron] OK in 85s
+    [nemotron] OK in 75s
+vision: 300 done | {'nemotron': 297, 'ox-alpha': 3}
+    [nemotron] OK in 13s
+    [nemotron] OK in 27s
+    [nemotron] OK in 13s
+    [nemotron] OK in 10s
+    [nemotron] OK in 13s
+    [nemotron] OK in 136s
+    [nemotron] OK in 103s
+    [nemotron] OK in 24s
+    [nemotron] OK in 17s
+    [nemotron] OK in 23s
+    [nemotron] OK in 9s
+    [nemotron] OK in 15s
+    [nemotron] OK in 104s
+    [nemotron] OK in 71s
+    [nemotron] OK in 9s
+    [nemotron] OK in 166s
+    [nemotron] OK in 11s
+    [nemotron] OK in 66s
+    [nemotron] OK in 42s
+    [nemotron] OK in 14s
+    [nemotron] OK in 75s
+    [nemotron] OK in 19s
+    [nemotron] OK in 12s
+    [nemotron] OK in 30s
+    [nemotron] OK in 17s
+vision: 325 done | {'nemotron': 322, 'ox-alpha': 3}
+    [nemotron] OK in 80s
+    [nemotron] OK in 12s
+    [nemotron] OK in 28s
+    [nemotron] OK in 96s
+    [nemotron] OK in 148s
+    [nemotron] OK in 75s
+    [nemotron] OK in 10s
+    [nemotron] OK in 99s
+    [nemotron] OK in 13s
+    [nemotron] OK in 24s
+    [nemotron] OK in 41s
+    [nemotron] OK in 11s
+    [nemotron] OK in 13s
+    [nemotron] OK in 10s
+    [nemotron] OK in 9s
+    [nemotron] OK in 83s
+    [nemotron] OK in 14s
+    [nemotron] OK in 44s
+    [nemotron] OK in 23s
+    [nemotron] OK in 10s
+    [nemotron] OK in 37s
+    [nemotron] OK in 72s
+    [nemotron] OK in 6s
+    [nemotron] OK in 19s
+    [nemotron] OK in 10s
+vision: 350 done | {'nemotron': 347, 'ox-alpha': 3}
+    [nemotron] OK in 15s
+    [nemotron] OK in 13s
+    [nemotron] OK in 10s
+    [nemotron] OK in 77s
+    [nemotron] OK in 14s
+    [nemotron] OK in 84s
+    [nemotron] OK in 21s
+    [nemotron] OK in 14s
+    [nemotron] OK in 16s
+    [nemotron] OK in 153s
+    [nemotron] OK in 27s
+    [nemotron] OK in 79s
+    [nemotron] OK in 3s
+    [nemotron] OK in 81s
+    [nemotron] OK in 35s
+    [nemotron] OK in 12s
+    [nemotron] OK in 27s
+    [nemotron] OK in 13s
+    [nemotron] OK in 15s
+    [nemotron] OK in 13s
+    [nemotron] OK in 16s
+    [nemotron] OK in 5s
+    [nemotron] OK in 19s
+    [nemotron] OK in 80s
+    [nemotron] OK in 100s
+vision: 375 done | {'nemotron': 372, 'ox-alpha': 3}
+    [nemotron] OK in 8s
+    [nemotron] OK in 10s
+    [nemotron] OK in 18s
+    [nemotron] OK in 8s
+    [nemotron] OK in 8s
+    [nemotron] OK in 12s
+    [nemotron] OK in 7s
+    [nemotron] OK in 45s
+    [nemotron] FAIL 15s: nemotron 429
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 77s: nemotron 429
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 14s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] PARSE-FAIL 26s (1/3)
+    [nemotron] FAIL 16s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 105s: nemotron 429
+    [ox-alpha] PARSE-FAIL 24s (2/3)
+    [nemotron] cooling down
+    [ox-alpha] PARSE-FAIL 22s (3/3)
+    [nemotron] cooling down
+    [ox-alpha] OK in 12s
+    [nemotron] cooling down
+    [ox-alpha] OK in 21s
+    [nemotron] FAIL 100s: nemotron 429
+    [ox-alpha] PARSE-FAIL 23s (1/3)
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 100s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] PARSE-FAIL 20s (2/3)
+    [nemotron] FAIL 100s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 7s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 72s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 10s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 72s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 8s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 9s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 99s: nemotron 429
+    [ox-alpha] PARSE-FAIL 32s (3/3)
+    [nemotron] cooling down
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 91s: nemotron 429
+    [ox-alpha] PARSE-FAIL 31s (1/3)
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 91s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] PARSE-FAIL 39s (2/3)
+    [nemotron] cooling down
+    [ox-alpha] PARSE-FAIL 37s (3/3)
+    [nemotron] FAIL 2s: nemotron 429
+    [ox-alpha] OK in 18s
+    [nemotron] cooling down
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 141s: nemotron 429
+    [ox-alpha] OK in 19s
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] PARSE-FAIL 32s (1/3)
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] PARSE-FAIL 33s (2/3)
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] PARSE-FAIL 14s (3/3)
+    [nemotron] cooling down
+    [ox-alpha] OK in 12s
+    [nemotron] cooling down
+    [ox-alpha] OK in 18s
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 113s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 19s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 21s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 111s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 19s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 120s: openrouter unreachable: HTTPSConnectionPool(host='openrouter.ai', port=443): Rea
+    [gemma-4-31b] FAIL 120s: openrouter unreachable: HTTPSConnectionPool(host='openrouter.ai', port=443): Rea
+    [nemotron] FAIL 19s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 19s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] OK in 15s
+    [nemotron] cooling down
+    [ox-alpha] OK in 35s
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] OK in 40s
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 502
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 64s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 3s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 91s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 1s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+vision fail 2048941071129014391: all vision backends failed after 26 waits: nemotron 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 1s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 64s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 3s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 127s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+vision fail 2048932990894706840: all vision backends failed after 26 waits: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 3s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+vision fail 2048896171184455970: all vision backends failed after 26 waits: nemotron 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 10s: no images could be downloaded
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] OK in 16s
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] OK in 37s
+    [nemotron] cooling down
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 9s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 9s: nemotron 429
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 8s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 7s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 7s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 7s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 8s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 10s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 7s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] OK in 17s
+    [nemotron] cooling down
+    [ox-alpha] OK in 13s
+vision: 400 done | {'nemotron': 380, 'ox-alpha': 20}
+    [nemotron] cooling down
+    [ox-alpha] OK in 14s
+    [nemotron] cooling down
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] OK in 21s
+    [nemotron] cooling down
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] PARSE-FAIL 13s (1/3)
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] OK in 11s
+Exception in thread Thread-1 (worker):
+Traceback (most recent call last):
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 120, in worker
+    ok = process_one_row(row)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 108, in process_one_row
+    self.store.save_media_understanding(tid, result)
+  File "/home/mbhat/x-brain/harness/xbrain/store.py", line 223, in save_media_understanding
+    self.db.execute("UPDATE tweets SET media_understanding=? WHERE tweet_id=?",
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139871501674304 and this is thread id 139871475463744.
+{'done': 0, 'failed': 0}
+usage: {'ox-alpha': 1}
+=== worker exited, restarting in 10s: Tue Aug 25 16:10:55 PDT 2026 ===
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] OK in 12s
+Exception in thread Thread-1 (worker):
+Traceback (most recent call last):
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 120, in worker
+    ok = process_one_row(row)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 108, in process_one_row
+    self.store.save_media_understanding(tid, result)
+  File "/home/mbhat/x-brain/harness/xbrain/store.py", line 223, in save_media_understanding
+    self.db.execute("UPDATE tweets SET media_understanding=? WHERE tweet_id=?",
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140536557422400 and this is thread id 140536531211840.
+{'done': 0, 'failed': 0}
+usage: {'ox-alpha': 1}
+=== worker exited, restarting in 10s: Tue Aug 25 16:17:24 PDT 2026 ===
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 3s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 1s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 2s: nemotron 429
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] OK in 13s
+Exception in thread Thread-1 (worker):
+Traceback (most recent call last):
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 120, in worker
+    ok = process_one_row(row)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 108, in process_one_row
+    self.store.save_media_understanding(tid, result)
+  File "/home/mbhat/x-brain/harness/xbrain/store.py", line 223, in save_media_understanding
+    self.db.execute("UPDATE tweets SET media_understanding=? WHERE tweet_id=?",
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139997537806144 and this is thread id 139997511595584.
+{'done': 0, 'failed': 0}
+usage: {'ox-alpha': 1}
+=== worker exited, restarting in 10s: Tue Aug 25 16:42:14 PDT 2026 ===
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] OK in 20s
+Exception in thread Thread-1 (worker):
+Traceback (most recent call last):
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 120, in worker
+    ok = process_one_row(row)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 108, in process_one_row
+    self.store.save_media_understanding(tid, result)
+  File "/home/mbhat/x-brain/harness/xbrain/store.py", line 223, in save_media_understanding
+    self.db.execute("UPDATE tweets SET media_understanding=? WHERE tweet_id=?",
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140026294400832 and this is thread id 140026268190272.
+{'done': 0, 'failed': 0}
+usage: {'ox-alpha': 1}
+=== worker exited, restarting in 10s: Tue Aug 25 16:42:45 PDT 2026 ===
+    [nemotron] FAIL 2s: nemotron 429
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 2s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 2s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] OK in 21s
+Exception in thread Thread-1 (worker):
+Traceback (most recent call last):
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 120, in worker
+    ok = process_one_row(row)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 108, in process_one_row
+    self.store.save_media_understanding(tid, result)
+  File "/home/mbhat/x-brain/harness/xbrain/store.py", line 223, in save_media_understanding
+    self.db.execute("UPDATE tweets SET media_understanding=? WHERE tweet_id=?",
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140310516848448 and this is thread id 140310490637888.
+{'done': 0, 'failed': 0}
+usage: {'ox-alpha': 1}
+=== worker exited, restarting in 10s: Tue Aug 25 16:55:34 PDT 2026 ===
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] OK in 15s
+Exception in thread Thread-1 (worker):
+Traceback (most recent call last):
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 120, in worker
+    ok = process_one_row(row)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 108, in process_one_row
+    self.store.save_media_understanding(tid, result)
+  File "/home/mbhat/x-brain/harness/xbrain/store.py", line 223, in save_media_understanding
+    self.db.execute("UPDATE tweets SET media_understanding=? WHERE tweet_id=?",
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140321553889088 and this is thread id 140321527678528.
+{'done': 0, 'failed': 0}
+usage: {'ox-alpha': 1}
+=== worker exited, restarting in 10s: Tue Aug 25 16:56:01 PDT 2026 ===
+    [nemotron] FAIL 2s: nemotron 429
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 1s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 1s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 1s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 2s: nemotron 429
+    [ox-alpha] PARSE-FAIL 11s (1/3)
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 1s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 1s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 1s: openrouter 429
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+    [nemotron] FAIL 1s: nemotron 429
+    [ox-alpha] FAIL 1s: openrouter 429
+    [gemma-4-31b] FAIL 1s: openrouter 429
+    [nemotron] cooling down
+    [ox-alpha] cooling down
+    [gemma-4-31b] cooling down
+=== worker exited, restarting in 10s: Tue Aug 25 17:20:29 PDT 2026 ===
+    [nemotron] OK in 26s
+Exception in thread Thread-1 (worker):
+Traceback (most recent call last):
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 120, in worker
+    ok = process_one_row(row)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 108, in process_one_row
+    self.store.save_media_understanding(tid, result)
+  File "/home/mbhat/x-brain/harness/xbrain/store.py", line 223, in save_media_understanding
+    self.db.execute("UPDATE tweets SET media_understanding=? WHERE tweet_id=?",
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139697932670784 and this is thread id 139697906460224.
+{'done': 0, 'failed': 0}
+usage: {'nemotron': 1}
+=== worker exited, restarting in 10s: Tue Aug 25 17:21:05 PDT 2026 ===
+    [nemotron] OK in 15s
+Exception in thread Thread-1 (worker):
+Traceback (most recent call last):
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 120, in worker
+    ok = process_one_row(row)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 108, in process_one_row
+    self.store.save_media_understanding(tid, result)
+  File "/home/mbhat/x-brain/harness/xbrain/store.py", line 223, in save_media_understanding
+    self.db.execute("UPDATE tweets SET media_understanding=? WHERE tweet_id=?",
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140075535357760 and this is thread id 140075509147200.
+{'done': 0, 'failed': 0}
+usage: {'nemotron': 1}
+=== worker exited, restarting in 10s: Tue Aug 25 17:21:31 PDT 2026 ===
+    [nemotron] OK in 12s
+Exception in thread Thread-1 (worker):
+Traceback (most recent call last):
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/mbhat/miniconda3/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 120, in worker
+    ok = process_one_row(row)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mbhat/x-brain/harness/xbrain/vision.py", line 108, in process_one_row
+    self.store.save_media_understanding(tid, result)
+  File "/home/mbhat/x-brain/harness/xbrain/store.py", line 223, in save_media_understanding
+    
+    
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140367206082368 and this is thread id 140367179871808.
+{'done': 0, 'failed': 0}
+usage: {'nemotron': 1}
+=== worker exited, restarting in 10s: Tue Aug 25 17:21:53 PDT 2026 ===
+    [nemotron] OK in 13s
+    [nemotron] OK in 13s
+    [nemotron] OK in 8s
+=== worker exited, restarting in 10s: Tue Aug 25 17:22:43 PDT 2026 ===
+    [nemotron] OK in 10s
+    [nemotron] OK in 10s
+    [nemotron] OK in 9s
+    [nemotron] OK in 38s
+    [nemotron] OK in 24s
+    [nemotron] OK in 31s
+    [nemotron] OK in 12s
+    [nemotron] OK in 23s
+    [nemotron] OK in 16s
+    [nemotron] OK in 21s
+    [nemotron] OK in 18s
+    [nemotron] OK in 13s
+    [nemotron] OK in 34s
+    [nemotron] OK in 27s
+    [nemotron] OK in 20s
+    [nemotron] OK in 31s
+    [nemotron] OK in 11s
+    [nemotron] OK in 21s
+    [nemotron] OK in 44s
+    [nemotron] OK in 24s
+    [nemotron] OK in 60s
+    [nemotron] OK in 14s
+    [nemotron] OK in 54s
+    [nemotron] OK in 24s
+    [nemotron] OK in 17s
+vision: 25 done | {'nemotron': 25}
+    [nemotron] OK in 42s
+    [nemotron] OK in 18s
+    [nemotron] OK in 13s
+    [nemotron] OK in 29s
+    [nemotron] OK in 27s
+    [nemotron] OK in 28s
+    [nemotron] OK in 34s
+    [nemotron] OK in 17s
+    [nemotron] OK in 13s
+    [nemotron] OK in 18s
+    [nemotron] OK in 34s
+    [nemotron] OK in 53s
+    [nemotron] OK in 72s
+    [nemotron] OK in 19s
+    [nemotron] OK in 17s
+    [nemotron] OK in 20s
+    [nemotron] OK in 41s
+    [nemotron] OK in 15s
+=== worker exited, restarting in 10s: Tue Aug 25 17:42:02 PDT 2026 ===
+    [nemotron] OK in 48s
+    [nemotron] OK in 10s
+    [nemotron] OK in 33s
+    [nemotron] OK in 46s
+    [nemotron] OK in 10s
+    [nemotron] OK in 20s
+    [nemotron] OK in 35s
+    [nemotron] OK in 50s
+    [nemotron] OK in 6s
+    [nemotron] OK in 9s
+    [nemotron] OK in 35s
+    [nemotron] OK in 16s
+    [nemotron] OK in 34s
+    [nemotron] OK in 85s
+    [nemotron] OK in 29s
+    [nemotron] OK in 23s
+    [nemotron] OK in 22s
+    [nemotron] OK in 19s
+    [nemotron] OK in 25s
+    [nemotron] OK in 18s
+    [nemotron] OK in 37s
+    [nemotron] OK in 26s
+    [nemotron] OK in 30s
+    [nemotron] OK in 16s
+    [nemotron] OK in 43s
+vision: 25 done | {'nemotron': 25}
+    [nemotron] OK in 44s
+    [nemotron] OK in 20s
+    [nemotron] OK in 53s
+    [nemotron] OK in 28s
+    [nemotron] OK in 15s
+    [nemotron] OK in 43s
+    [nemotron] OK in 11s
+    [nemotron] OK in 28s
+    [nemotron] OK in 30s
+    [nemotron] OK in 34s
+    [nemotron] OK in 32s
+    [nemotron] OK in 41s
+    [nemotron] OK in 25s
+    [nemotron] OK in 28s
+    [nemotron] OK in 36s
+    [nemotron] OK in 21s
+    [nemotron] OK in 62s
+    [nemotron] OK in 14s
+    [nemotron] OK in 12s
+    [nemotron] OK in 20s
+    [nemotron] OK in 22s
+    [nemotron] OK in 39s
+    [nemotron] OK in 42s
+    [nemotron] OK in 17s
+    [nemotron] OK in 36s
+vision: 50 done | {'nemotron': 50}
+    [nemotron] OK in 34s
+    [nemotron] OK in 14s
+    [nemotron] OK in 19s
+    [nemotron] OK in 12s
+    [nemotron] OK in 17s
+    [nemotron] OK in 21s
+    [nemotron] PARSE-FAIL 33s (1/3)
+    [nemotron] PARSE-FAIL 35s (2/3)
+    [nemotron] PARSE-FAIL 34s (3/3)
+    [nemotron] OK in 18s
+    [nemotron] OK in 37s
+    [nemotron] OK in 29s
+    [nemotron] OK in 23s
+    [nemotron] OK in 9s
+    [nemotron] OK in 25s
+    [nemotron] OK in 24s
+    [nemotron] OK in 16s
+    [nemotron] OK in 27s
+    [nemotron] OK in 21s
+    [nemotron] OK in 22s
+    [nemotron] OK in 150s
+    [nemotron] OK in 15s
+    [nemotron] OK in 21s
+    [nemotron] OK in 27s
+    [nemotron] OK in 43s
+    [nemotron] OK in 43s
+    [nemotron] OK in 29s
+vision: 75 done | {'nemotron': 75}
+    [nemotron] OK in 20s
+    [nemotron] OK in 26s
+    [nemotron] OK in 17s
+    [nemotron] OK in 26s
+    [nemotron] OK in 20s
+    [nemotron] OK in 32s
+    [nemotron] OK in 32s
+    [nemotron] OK in 26s
+    [nemotron] OK in 52s
+    [nemotron] OK in 14s
+    [nemotron] OK in 14s
+    [nemotron] OK in 20s
+    [nemotron] OK in 46s
+    [nemotron] FAIL 189s: nemotron unreachable after retries: ('Connection aborted.', TimeoutError('The wr
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+=== worker exited, restarting in 10s: Tue Aug 25 18:34:49 PDT 2026 ===
+=== worker exited, restarting in 10s: Tue Aug 25 18:37:30 PDT 2026 ===
+    [nemotron] FAIL 192s: nemotron unreachable after retries: ('Connection aborted.', TimeoutError('The wr
+    [ox-alpha] FAIL 2s: openrouter 429
+    [gemma-4-31b] FAIL 0s: openrouter 429
+=== worker exited, restarting in 10s: Tue Aug 25 18:41:17 PDT 2026 ===
+    [nemotron] OK in 19s
+    [nemotron] OK in 11s
+    [nemotron] OK in 1s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 1s
+    [nemotron] OK in 6s
+    [nemotron] OK in 6s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 7s
+    [nemotron] OK in 7s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 6s
+vision: 25 done | {'nemotron': 25}
+    [nemotron] OK in 6s
+vision: 25 done | {'nemotron': 25}
+    [nemotron] OK in 5s
+    [nemotron] OK in 6s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 7s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 5s
+    [nemotron] OK in 3s
+    [nemotron] OK in 6s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 6s
+    [nemotron] OK in 2s
+    [nemotron] OK in 6s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 1s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 7s
+vision: 50 done | {'nemotron': 50}
+    [nemotron] OK in 6s
+vision: 50 done | {'nemotron': 50}
+    [nemotron] OK in 3s
+    [nemotron] OK in 5s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s    [nemotron] OK in 2s
+
+    [nemotron] OK in 25s
+    [nemotron] OK in 25s
+    [nemotron] OK in 5s
+    [nemotron] OK in 5s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 4s
+    [nemotron] OK in 4s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+vision: 75 done | {'nemotron': 75}
+    [nemotron] OK in 2s
+vision: 75 done | {'nemotron': 75}
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 5s
+    [nemotron] OK in 6s
+    [nemotron] OK in 6s
+    [nemotron] OK in 6s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 6s    [nemotron] OK in 7s
+
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 5s
+    [nemotron] OK in 3s
+vision: 100 done | {'nemotron': 100}
+    [nemotron] OK in 3s
+vision: 100 done | {'nemotron': 100}
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 5s
+    [nemotron] OK in 5s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+vision: 125 done | {'nemotron': 125}
+    [nemotron] OK in 2s
+vision: 125 done | {'nemotron': 125}
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 6s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 1s
+    [nemotron] OK in 3s
+    [nemotron] OK in 5s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 6s
+    [nemotron] OK in 6s
+    [nemotron] OK in 6s
+    [nemotron] OK in 6s
+    [nemotron] OK in 5s
+    [nemotron] OK in 5s
+    [nemotron] OK in 4s
+    [nemotron] OK in 6s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 5s
+    [nemotron] OK in 5s
+    [nemotron] OK in 7s
+vision: 150 done | {'nemotron': 150}
+    [nemotron] OK in 6s
+vision: 150 done | {'nemotron': 150}
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 5s
+    [nemotron] OK in 2s
+    [nemotron] OK in 5s
+    [nemotron] OK in 2s
+    [nemotron] OK in 5s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 5s
+    [nemotron] OK in 4s
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 6s
+    [nemotron] OK in 5s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+vision: 175 done | {'nemotron': 175}
+    [nemotron] OK in 3s
+vision: 175 done | {'nemotron': 175}
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 7s
+    [nemotron] OK in 6s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 7s
+    [nemotron] OK in 7s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 7s
+    [nemotron] OK in 7s
+    [nemotron] OK in 5s
+    [nemotron] OK in 5s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 6s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 5s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 4s
+vision: 200 done | {'nemotron': 200}
+vision: 200 done | {'nemotron': 200}
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 6s
+    [nemotron] OK in 7s
+    [nemotron] OK in 5s
+    [nemotron] OK in 1s
+    [nemotron] OK in 5s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 4s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 1s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 6s
+    [nemotron] OK in 6s
+    [nemotron] OK in 6s
+    [nemotron] OK in 5s
+    [nemotron] OK in 6s
+    [nemotron] OK in 5s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 4s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 5s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 6s
+    [nemotron] OK in 7s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 6s
+    [nemotron] OK in 6s
+    [nemotron] OK in 8s
+    [nemotron] OK in 7s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] PARSE-FAIL 2s (1/3)
+    [nemotron] PARSE-FAIL 3s (1/3)
+    [nemotron] PARSE-FAIL 2s (2/3)
+    [nemotron] PARSE-FAIL 2s (2/3)
+    [nemotron] PARSE-FAIL 2s (3/3)
+    [nemotron] PARSE-FAIL 2s (3/3)
+    [nemotron] OK in 2s
+vision: 225 done | {'nemotron': 225}
+    [nemotron] OK in 2s
+vision: 225 done | {'nemotron': 225}
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 7s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 6s
+    [nemotron] OK in 3s
+    [nemotron] OK in 1s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 7s
+    [nemotron] OK in 6s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+vision: 250 done | {'nemotron': 250}
+    [nemotron] OK in 3s
+vision: 250 done | {'nemotron': 250}
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 7s
+    [nemotron] OK in 3s
+    [nemotron] OK in 1s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 5s
+    [nemotron] OK in 2s
+    [nemotron] OK in 1s
+    [nemotron] OK in 7s
+    [nemotron] OK in 3s
+    [nemotron] OK in 6s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 7s
+    [nemotron] OK in 2s
+    [nemotron] OK in 6s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] PARSE-FAIL 7s (1/3)
+    [nemotron] OK in 6s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+vision: 275 done | {'nemotron': 275}
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] PARSE-FAIL 3s (1/3)
+    [nemotron] OK in 6s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+vision: 275 done | {'nemotron': 275}
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 1s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 4s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 1s
+    [nemotron] PARSE-FAIL 2s (1/3)
+    [nemotron] PARSE-FAIL 2s (2/3)
+    [nemotron] PARSE-FAIL 2s (2/3)
+    [nemotron] PARSE-FAIL 3s (3/3)
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+vision: 300 done | {'nemotron': 300}
+    [nemotron] OK in 1s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 5s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 6s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 5s
+    [nemotron] OK in 1s
+    [nemotron] OK in 2s
+    [nemotron] OK in 2s
+    [nemotron] OK in 3s
+vision: 300 done | {'nemotron': 300}
+    [nemotron] OK in 2s
+    [nemotron] OK in 1s

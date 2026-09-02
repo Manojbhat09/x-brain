@@ -1,0 +1,41 @@
+# secrets
+.env
+.creds.json
+creds.json
+config.json
+*.key
+
+# runtime state (never commit a personal dataset)
+data/
+.xbrain/
+x-brain/
+state.sqlite
+state.sqlite-*
+*.db
+*.duckdb
+vault/
+cache/
+quarantine/
+raw/
+*.log
+*.jsonl
+*.skip.json
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# models / blobs
+*.gguf
+*.bin
+*.safetensors
+
+# os
+.DS_Store
+Thumbs.db
