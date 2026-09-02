@@ -17,10 +17,12 @@ description: Turn any X account's reposts into a structured knowledge base + Obs
 ```bash
 cp .env.example .env   # fill X_USER_ID, X_AUTH_TOKEN, X_CT0
 pip install -r harness/requirements.txt
-python3 harness/xb.py --brain-dir ./data doctor                     # verify creds (reposts)
-python3 harness/xb.py --brain-dir ./data doctor --posts-only       # verify posts timeline
-python3 harness/xb.py --brain-dir ./data enum --resume              # L1 reposts
-python3 harness/xb.py --brain-dir ./data enum --posts-only --resume # L1 posts (originals only, separate cursor)
+python3 harness/xb.py --brain-dir ./data doctor                        # verify creds (reposts)
+python3 harness/xb.py --brain-dir ./data doctor --posts-only          # verify posts timeline
+python3 harness/xb.py --brain-dir ./data doctor --posts-reposts       # verify both
+python3 harness/xb.py --brain-dir ./data enum --resume                 # L1 reposts
+python3 harness/xb.py --brain-dir ./data enum --posts-only --resume    # L1 posts (originals only, separate cursor)
+python3 harness/xb.py --brain-dir ./data enum --posts-reposts --resume # L1 both timelines sequentially, compatible
 python3 harness/xb.py --brain-dir ./data enrich                     # L2
 python3 harness/xb.py --brain-dir ./data links-run                  # L3
 python3 harness/xb.py --brain-dir ./data vision-run                 # L4 (optional)

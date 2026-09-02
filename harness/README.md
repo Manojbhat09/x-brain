@@ -1,15 +1,18 @@
 # x-brain
 
-A local-first pipeline that turns any X/Twitter account's repost stream into a
-structured, queryable knowledge base, then renders it as an interactive mind
-graph (Obsidian-compatible vault plus a portable network JSON).
+A local-first pipeline that turns any X/Twitter account's timeline — reposts,
+posts, or both — into a structured, queryable knowledge base, then renders it
+as an interactive mind graph (Obsidian-compatible vault plus a portable network
+JSON).
 
-The tool was built for creators and heavy readers who use the repost action as
-a curation gesture: everything an account has amplified is enumerated,
+The tool was built for creators and heavy readers who use reposts and posts as
+curation signals: everything an account has amplified or authored is enumerated,
 enriched, scraped, understood across text, media, and links, fused into one
-coherent record per post, and connected into a graph. It runs on a single
+coherent record per item, and connected into a graph. It runs on a single
 consumer GPU (or CPU only), stores everything in one SQLite file, and is
-designed to be resumable, auditable, and never lossy.
+designed to be resumable, auditable, and never lossy. By default it enumerates
+reposts; `--posts-only` switches to the authored posts timeline and
+`--posts-reposts` builds a compatible archive of both in one run.
 
 ---
 
@@ -31,19 +34,26 @@ outputs are retried with error feedback and then quarantined, never dropped.
 
 ## 2. Data model (five levels)
 
-One row per repost; levels are column groups so cheap levels fill first and
-enrichment backfills:
+One row per timeline item (repost or post); levels are column groups so cheap
+levels fill first and enrichment backfills:
 
 | level | content | produced by |
 |---|---|---|
-| L1 post head | tweet id, author, text, timestamps, repost position, quote/retweet links, media refs | enumerator |
+| L1 item head | tweet id, `kind` (`repost` / `post`), author, text, timestamps, timeline position, quote/retweet links, media refs | enumerator (`UserRepostsTimeline` or `UserTweets`) |
 | L2 thread context | root/conversation ids, ancestors, in-reply-to, engagement snapshots | enricher |
 | L3 link layer | resolved URL, domain, title, description, page text, error states | link resolver |
 | L4 media understanding | description, OCR text, tags | vision worker |
 | L5 knowledge layer | topic, entities, summary, relevance reason, curation fields, fused synthesis, embeddings-ready fields | LLM cards |
 
-Deleted posts are first-class: tombstone records preserve first-seen/last-
-seen chronology, and the master ID list enables monthly deletion diffs.
+`kind` distinguishes the source timeline: `repost` for reposts, `post` for
+original authored posts; legacy rows have `NULL` (treated as `repost` for
+compatibility). `--posts-reposts` writes both kinds into the same SQLite file
+with separate cursors (`enum_cursor` / `enum_cursor_posts`) so reposts and
+posts never clobber each other. Deleted posts are first-class: tombstone records
+preserve first-seen/last-seen chronology, and the master ID list enables monthly
+deletion diffs. Comments/replies are not enumerated in L1 (see Limitations) —
+they are fetched as ancestors in L2 and require a separate `SearchTimeline`
+design.
 
 ---
 
@@ -53,9 +63,10 @@ seen chronology, and the master ID list enables monthly deletion diffs.
    account creds
         |
         v
-  L1  enumerator      full repost history via the platform's reposts
-        |             timeline operation; double-empty end-of-feed
-        v             detection; checkpointed, resumable
+  L1  enumerator      full history via reposts (--default), posts (--posts-only),
+        |             or both (--posts-reposts) — each with its own cursor,
+        |             double-empty end-of-feed detection, checkpointed, resumable
+        v
   L2  enricher        thread context + engagement, with a cookie-free
         |             public fallback resolver per ID
         v
@@ -80,17 +91,32 @@ seen chronology, and the master ID list enables monthly deletion diffs.
 
 ### Enumeration lanes
 
-The primary lane drives the reposts-timeline GraphQL operation with the full
-authenticated header set (bearer, session cookies, CSRF, client transaction
-id) and a pinned feature blob. A cookie-free public resolver serves as the
-per-ID fallback/verifier, and an official archive takeout can be imported to
-merge text snapshots (including since-deleted content) by tweet id. All
-lanes return identical DTOs; upper layers never know which lane served a
-request.
+The primary lane drives either `UserRepostsTimeline` (reposts, `QID bV_DHAI…`)
+or `UserTweets` (posts, `QID 6r5OLC_…` — override via `X_QID_POSTS` env if X
+rotates it) with the full authenticated header set (bearer, session cookies,
+CSRF, `x-client-transaction-id`, pinned feature blob). `--posts-only` uses
+`UserTweets` and filters to originals only (reposts in that timeline are
+dropped after fetch, reported as `posts filter: 20 fetched → 6 originals`);
+`--posts-reposts` runs both timelines sequentially with independent
+`enum_cursor` / `enum_cursor_posts` checkpoints and per-op rate windows
+(`UserRepostsTimeline` vs `UserTweets` budgets are tracked separately).
+A cookie-free public resolver serves as the per-ID fallback/verifier, and an
+official archive takeout can be imported to merge text snapshots (including
+since-deleted content) by tweet id. All lanes return identical DTOs; upper
+layers never know which lane served a request.
 
 Rate safety: token-bucket pacing with jitter, per-operation limit windows
 persisted from response headers, and a circuit breaker that trips on
 sustained rate-limit responses, halves the rate, and probes before closing.
+
+### Timeline kinds and compatibility
+
+| flag | timeline op | QID env override | cursor key | stored `kind` | notes |
+|------|-------------|-----------------|------------|---------------|-------|
+| (default) | `UserRepostsTimeline` | `QID_REPOSTS` (= `bV_DHAI…`) | `enum_cursor` | `repost` (legacy `NULL` also) | repost archive, compatible with all prior DBs |
+| `--posts-only` | `UserTweets` | `X_QID_POSTS` (= `6r5OLCC_…`) | `enum_cursor_posts` | `post` | original authored posts only; `UserTweets` also contains reposts but they are dropped, `kind breakdown: post=N` |
+| `--posts-reposts` | both sequentially | both | both | both | one `stats` shows `reposts cursor` + `posts cursor` + `kind breakdown`; idempotent per `tweet_id` so the two runs never duplicate |
+| comments/replies | not yet — requires `SearchTimeline`/`UserTweetsAndReplies` + ancestor BFS | — | — | `reply` (reserved) | replies live outside the two timelines; L2 already stores `ancestors_json` but full enumeration needs a separate design (see Limitations) |
 
 ### Deep curation pass (`deep-run`)
 
@@ -347,24 +373,30 @@ provider keys for the external router legs.
 ## 9. Usage
 
 ```bash
-python3 xb.py auth --auth-token <token> --ct0 <cookie>
-python3 xb.py doctor                     # verify lanes with one live page
+python3 xb.py auth --auth-token <token> --ct0 <cookie> --user-id <numeric_id>
+python3 xb.py doctor                                # verify reposts lane
+python3 xb.py doctor --posts-only                   # verify posts lane
+python3 xb.py doctor --posts-reposts                # verify both
 
-python3 xb.py enum --resume              # L1: full repost history
-python3 xb.py enrich                     # L2: thread context
-python3 xb.py links-run                  # L3: resolve + scrape links
-python3 xb.py vision-run                 # L4: media understanding (optional)
+python3 xb.py enum --resume                         # L1: reposts (default, resumable)
+python3 xb.py enum --posts-only --resume            # L1: posts only (originals, resumable)
+python3 xb.py enum --posts-reposts --resume         # L1: both timelines sequentially, compatible
+python3 xb.py enrich                                # L2: thread context (per-id, handles both kinds)
+python3 xb.py links-run                             # L3: resolve + scrape links
+python3 xb.py vision-run                            # L4: media understanding (optional)
 
-# L5: routed analysis, four cards per post
+# L5: routed analysis, four cards per item (kind-aware but model-agnostic)
 python3 xb.py llm-run --route --mode int-ext-int \
     --backends ollama,inferx,or-nemotron
 
-python3 xb.py deep-run                   # curation: why reposted + study value
-python3 xb.py fuse-run                   # synthesis: unify text+vision+links
+python3 xb.py deep-run                              # curation: why reposted/posted + study value
+python3 xb.py fuse-run                              # synthesis: unify text+vision+links
 
-# mind graph
+# mind graph (optionally filter by kind/topic)
 python3 xb.py graph-export --out ~/vault --min-cooccur 2 --min-mentions 2
 ```
+
+Key `enum`/`doctor` flags: `--posts-only` (posts), `--posts-reposts` (both), `--count`, `--max-pages`, `--resume`; QID override `X_QID_POSTS` env.
 
 Key `llm-run` flags: `--mode hybrid|ext-int-int|int-ext-int`,
 `--judge-model`, `--judge-backup`, `--catalog <json>`, `--model`,
@@ -376,6 +408,8 @@ Key `llm-run` flags: `--mode hybrid|ext-int-int|int-ext-int`,
 tail -f ~/xbrain_drain.log          # per-row heartbeats (tier, cards, elapsed)
 tail -f ~/x-brain/drain_calls.log   # every route decision + call + failure
 sqlite3 ~/x-brain/state.sqlite "SELECT stage, COUNT(*) FROM tweets GROUP BY stage"
+sqlite3 ~/x-brain/state.sqlite "SELECT kind, COUNT(*) FROM tweets GROUP BY kind"  # repost/post breakdown
+sqlite3 ~/x-brain/state.sqlite "SELECT value FROM kv WHERE key IN ('enum_cursor','enum_cursor_posts')"  # per-timeline checkpoints
 ```
 
 ---
@@ -439,8 +473,8 @@ thematic drift over time.
 - Enumeration depends on non-public platform endpoints; expect breakage
   when the platform changes shapes. Parsers are deliberately tolerant and
   raw payloads are retained for re-parsing. Feature blobs and operation ids
-  rotate and are pinned in config for easy patching.
-- Throughput on one 6 GB GPU is roughly 1 to 2.5 minutes per post for the
+  (`QID_REPOSTS`, `QID_POSTS` via `X_QID_POSTS`, `QID_TWEET`) rotate and are pinned in config for easy patching.
+- Throughput on one 6 GB GPU is roughly 1 to 2.5 minutes per item for the
   full four-card routed pipeline depending on tier mix; deep-tier posts are
   markedly slower (CPU offload).
 - External free tiers are rate-limited and intermittently unavailable;
@@ -449,10 +483,20 @@ thematic drift over time.
 - The uncensored tier exists for rows where aligned models hedge or refuse;
   it is selected only when the router flags such rows, and its outputs
   carry the same grounding audits as everything else.
+- Comments/replies are not yet enumerated in L1: replies live outside
+  `UserRepostsTimeline`/`UserTweets` and require a separate
+  `SearchTimeline` or `UserTweetsAndReplies` enumerator plus ancestor BFS
+  over `conversation_id` (L2 `ancestors_json` already stores ancestors but
+  currently single-hop; comments need multi-hop with dedupe and tombstone
+  propagation per ancestor). The `kind='reply'` column is reserved; graph
+  `reply→parent` edges and conversation clustering are designed but not
+  implemented. Posts vs reposts, however, already work: `--posts-only`
+  (originals only) and `--posts-reposts` (both, compatible cursors) are
+  tested and cover the full `UserTweets` + `UserRepostsTimeline` surface.
 - Roadmap: embedding-backed semantic search over fused records; era/theme
   segmentation (monthly clustering of summaries into named periods);
   archive-takeout import and Wayback reconciliation for deleted-post
-  recovery.
+  recovery; full comments/replies enumeration.
 
 ---
 

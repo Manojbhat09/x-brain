@@ -88,8 +88,10 @@ python3 harness/xb.py --help
 python3 harness/xb.py --brain-dir ./data auth --auth-token ... --ct0 ... --user-id 123
 python3 harness/xb.py --brain-dir ./data doctor
 python3 harness/xb.py --brain-dir ./data doctor --posts-only
+python3 harness/xb.py --brain-dir ./data doctor --posts-reposts
 python3 harness/xb.py --brain-dir ./data enum --resume --max-pages 2
 python3 harness/xb.py --brain-dir ./data enum --posts-only --resume --max-pages 2
+python3 harness/xb.py --brain-dir ./data enum --posts-reposts --resume --max-pages 2  # both timelines
 python3 harness/xb.py --brain-dir ./data stats   # shows reposts/posts cursors + kind breakdown
 python3 harness/xb.py --brain-dir ./data graph-export --out ./data/vault --min-cooccur 2 --min-mentions 2
 # drain variants

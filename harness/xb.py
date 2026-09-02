@@ -49,20 +49,27 @@ def cmd_doctor(args) -> int:
     lane = _make_lane(args)
     store = Store(bd)
     uid = sess.require_user_id(bd, getattr(args, "user_id", None))
-    kind = "posts" if getattr(args, "posts_only", False) else "reposts"
-    print(f"creds: ok | user_id: {uid} | kind: {kind} | brain: {bd}")
-    print(lane.status(kind))
-    try:
-        items, cursor = lane.fetch_page(uid, None, 1, kind=kind)
-        print(f"probe page: {len(items)} item(s), cursor={'yes' if cursor else 'no'}")
-        if items:
-            it = items[0]
-            print(f"  sample: @{it['author_handle']}: {it['text'][:60]!r}")
-        print("doctor: PASS")
-        return 0
-    except Exception as e:
-        print(f"doctor: FAIL — {e}")
-        return 1
+    if getattr(args, "posts_reposts", False):
+        kinds = ["reposts", "posts"]
+    elif getattr(args, "posts_only", False):
+        kinds = ["posts"]
+    else:
+        kinds = ["reposts"]
+    # single-kind probe is the common case; both probes when --posts-reposts
+    for kind in kinds:
+        print(f"creds: ok | user_id: {uid} | kind: {kind} | brain: {bd}")
+        print(lane.status(kind))
+        try:
+            items, cursor = lane.fetch_page(uid, None, 1, kind=kind)
+            print(f"probe [{kind}]: {len(items)} item(s), cursor={'yes' if cursor else 'no'}")
+            if items:
+                it = items[0]
+                print(f"  sample: @{it['author_handle']}: {it['text'][:60]!r}")
+        except Exception as e:
+            print(f"doctor [{kind}]: FAIL — {e}")
+            return 1
+    print("doctor: PASS")
+    return 0
 
 
 def cmd_enum(args) -> int:
@@ -70,10 +77,31 @@ def cmd_enum(args) -> int:
     lane = _make_lane(args)
     store = Store(bd)
     uid = sess.require_user_id(bd, getattr(args, "user_id", None))
-    kind = "posts" if getattr(args, "posts_only", False) else "reposts"
-    en = Enumerator(lane, store, uid, count=args.count, kind=kind)
-    result = en.run(resume=args.resume, max_pages=args.max_pages)
-    print(result)
+    if getattr(args, "posts_reposts", False):
+        kinds = ["reposts", "posts"]
+    elif getattr(args, "posts_only", False):
+        kinds = ["posts"]
+    else:
+        kinds = ["reposts"]
+    results = {}
+    for kind in kinds:
+        en = Enumerator(lane, store, uid, count=args.count, kind=kind)
+        r = en.run(resume=args.resume, max_pages=args.max_pages)
+        results[kind] = r
+        print(f"enum [{kind}]: {r}")
+    # also print combined stats
+    print(store.stats())
+    try:
+        rows = store.db.execute("SELECT COALESCE(kind,'repost'), COUNT(*) FROM tweets GROUP BY kind").fetchall()
+        if rows:
+            print("kind breakdown:", ", ".join(f"{k}={n}" for k,n in rows))
+    except Exception:
+        pass
+    # if single kind, return its result for backward compat
+    if len(kinds) == 1:
+        print(results[kinds[0]])
+    else:
+        print({"kinds": results})
     return 0
 
 
@@ -390,6 +418,7 @@ def main() -> int:
 
     p = sub.add_parser("doctor", help="verify creds + one live page")
     p.add_argument("--posts-only", action="store_true", help="use posts timeline (UserTweets) instead of reposts")
+    p.add_argument("--posts-reposts", action="store_true", help="probe both timelines (reposts + posts) — for full archive")
     p.set_defaults(fn=cmd_doctor)
 
     p = sub.add_parser("enum", help="enumerate timeline (L1)")
@@ -397,6 +426,7 @@ def main() -> int:
     p.add_argument("--max-pages", type=int, default=0, help="0 = until end")
     p.add_argument("--count", type=int, default=20, help="items per page (try 50)")
     p.add_argument("--posts-only", action="store_true", help="enumerate posts (UserTweets) instead of reposts")
+    p.add_argument("--posts-reposts", action="store_true", help="enumerate both posts and reposts (UserTweets + UserRepostsTimeline) in one run")
     p.set_defaults(fn=cmd_enum)
 
     p = sub.add_parser("enrich", help="L2 thread enrichment for discovered tweets")
