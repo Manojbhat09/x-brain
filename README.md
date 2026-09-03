@@ -1,8 +1,19 @@
-# x-brain — quick start
+<div align="center">
+
+<img src="obfs.png" alt="x-brain" width="100%" />
+
+# x-brain 
+
+[![PyPI](https://img.shields.io/pypi/v/mtplx?label=PyPI)](https://pypi.org/project/mtplx/)
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
+
+</div>
+
 
 Turn any X account's reposts into a queryable knowledge base + mind graph.
 
-> **No username or key is shipped.** Copy `.env.example` → `.env` and fill it. Every secret stays local.
+> **No username or key is persistent.** Copy `.env.example` → `.env` and fill it. Every secret stays local.
 
 ## 1. Install
 
